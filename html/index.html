@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    </head>
-    <body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    
+    <div class="container">
         <div class="header">
             <div class="list-header">
                 <div class="left-header">
                     <ul>
                         <li>
-                            <p>Tuesday, November, 4, 2014</p>
+                            <span>Tuesday, November, 4, 2014</span>
                         </li>
                     
                         <li>
-                            <p class="label"><i class="far fa-sun"></i> 32° C</p>
+                            <span class="label"><i class="far fa-sun"></i> 32° C</span>
                         </li>
                     </ul>
                 </div>
@@ -26,19 +42,19 @@
                     <ul>
                         <li>
                             <i class="fab fa-facebook-square"></i> 
-                      
+                        
                             <i class="fab fa-twitter-square"></i> 
                         
                             <i class="fab fa-google-plus"></i> 
-                       
+                        
                             <i class="fas fa-rss-square"></i>
-                      
+                        
                             <i class="fab fa-youtube-square"></i> 
 
                             <i class=" fab fa-pinterest-square"></i>
                         </li>
                         <li class="symbol">
-                            <p>LOGIN</p>
+                            <span>LOGIN</span>
                         </li>
                     </ul>
                 </div>
@@ -50,31 +66,32 @@
                     <span><img src="../img/logo.png" alt="Logo AZETE"></span>
                 </div>
                 <div class="logo-2">
-                    <img src="../img/1.png" alt="Logo AZETE">
+                    <img src="../img/1.png" width="100% " alt="Logo AZETE">
                 </div>
             </div>
         </div>
         <div class="list-menu">
-            <nav class="nav-menu-left">
-                <ul>
-                    <li><a href="#">HOME</a></li> 
-                    <li><a href="#">POLITICS</a></li> 
-                    <li><a href="#">BUSINESS</a></li> 
-                    <li><a href="#">SPORT</a></li> 
-                    <li><a href="#">TECHNOLOGY</a></li> 
-                    <li><a href="#">SCIENCE</a></li>
-                </ul>
-            </nav>
-            <div class="icon-search">
-                <i class="fas fa-search"></i>
+            <div class="menu-item">
+                <nav class="nav-menu-left">
+                    <ul>
+                        <li><a href="#">HOME</a></li> 
+                        <li><a href="#" class="menu-content-before">POLITICS</a></li> 
+                        <li><a href="#" class="menu-content-before">BUSINESS</a></li> 
+                        <li><a href="#" class="menu-content-before">SPORT</a></li> 
+                        <li><a href="#" class="menu-content-before">TECHNOLOGY</a></li> 
+                        <li><a href="#" class="menu-content-before">SCIENCE</a></li>
+                    </ul>
+                </nav>
+                <div class="icon-search">
+                    <i class="fas fa-search"></i>
+                </div>
             </div>
         </div>
         <div class="main">
             <div class="main-left">
                 <h5>
-                    <span class="title-latest">LATEST NEWS</span>
+                    <p class="title-latest">LATEST NEWS</p>
                 </h5>
-
                 <ul class="last-news">
                     <li>
                         <strong>tech</strong>
@@ -127,16 +144,209 @@
                     </li>
                     <div class="dash"></div>
                     <li>
-                       <a href="#" class="btn1">View All Posts</a>
+                        <a href="#" class="btn1">View All Posts</a>
                     </li>
                 </ul>
+               <div class="aside">
+                    <div class="img-content">
+                        <div class="img-docean">
+                            <img src="../img/docean.png" width="125" height="125" alt="">
+                        </div>
+                    </div>
+                    <h4 class="box-tweets">
+                        <p class="title-latest">TWEETS</p>
+                    </h4>
+                   
+               </div>
             </div>
+
             <div class="main-center">
-                
-            </div> 
-            <div class="main-right">
-                
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="slide-img">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <span>ENTERTAINMENT</span>
+                            <img src="../img/slide-1.png" width="570px" height="460px"alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>
+                                    Ongoing studio express service 
+                                    releasesThread
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <span>ENTERTAINMENT</span>
+                            <img src="../img/slide-2.png" width="570px" height="460px"alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>
+                                    Ongoing studio express service 
+                                    releasesThread
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <span>ENTERTAINMENT</span>
+                            <img src="../img/slide-3.png" width="570px" height="460px"alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Ongoing studio express service 
+                                    releasesThread
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <span>ENTERTAINMENT</span>
+                            <img src="../img/slide-4.png" width="570px" height="460px"alt="">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Ongoing studio express service 
+                                    releasesThread
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-alt">
+                    <h5>
+                        FEATURED NEWS
+                    </h5>
+                </div>
+                <div class="box-show">
+                    <div class="colum-1">
+                       <div class="cell">
+                            <img src="../img/col-1.png" width="271\" height="182" alt="">
+                            <div class="text-img">Technology</div>
+                            <h5>
+                            <p>
+                                Are you using marketplace 
+                                analytics?
+                            </p>
+                            </h5>
+                            <p> <i class="far fa-clock"></i> December 13, 2014  <i class="fas fa-comments"></i> 5</p>
+                            <p class="cell-text">
+                                We’re running a Cinemagraph contest
+                                where we want you to create Cinemagraph
+                                images and we’ve got over $1,000 worth of
+                                prizes up for grabs courtesy ..
+                            </p>
+                        </div>
+                        <div class="cell">
+                            <img src="../img/col-3.png" width="271" height="182" alt="">
+                            <div class="text-img">SPORT</div>
+                            <h5>
+                            <p>
+                                Rating reminder emails and 
+                                Email Settings panel
+                            </p>
+                            </h5>
+                            <p> <i class="far fa-clock"></i> December 13, 2014  <i class="fas fa-comments"></i> 5</p>
+                            <p>
+                                Good news everyone! Faceted search has
+                                landed and will be fully rolled out across
+                                Envato Market over the next day. I recom
+                                mend
+                                reading through the release..
+                            </p>
+                        </div>
+                    </div>
+                    <div class="colum-2">
+                        <div class="cell">
+                            <img src="../img/col-3.png" width="271" height="182" alt="">
+                            <div class="text-img">Culture</div>
+                            <h5>
+                            <p>
+                                Mobile friendly comments 
+                                dashboard - now launched!
+                            </p>
+                           <p> <i class="far fa-caret-circle-right"></i></p>
+                            <p> <i class="far fa-clock"></i> December 13, 2014  <i class="fas fa-comments"></i> 5</p>
+                            <p class="cell-text">
+                                Yes you read that correctly, the shopping
+                                cart is leaving the pipeline! We’re rolling
+                                out the shopping cart gradually across
+                                Envato Market over the next few..
+
+                            </p>
+                        </div>
+                        <div class="cell">
+                            <img src="../img/col-4.png" width="271" height="182" alt="">
+                            <div class="text-img">Traveling</div>
+                            <h5>
+                            <p>
+                                Introducing Envato's newest 
+                                Marketplaces Developer...
+                            </p>
+                            </h5>
+                            <p> <i class="far fa-clock"></i> December 13, 2014  <i class="fas fa-comments"></i> 5</p>
+                            <p>
+                                On top of the new model proposal we said
+                                we’d come back with more information
+                                about pricing and timelines. It turns out
+                                we’ll need to come back to you..
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-alt">
+                    <h5>
+                        <span>TECHNOLOGY</span>
+                    </h5>
+                </div>
+                <div class="box-technology">
+                    <div class="colum-3">
+                        <div class="cell">
+                            <img src="../img/technology.png" width="270" height="460"  alt="">
+                        </div>
+                    </div>
+                    <div class="colum-4">
+                        <div class="box-center">
+                            <h5>
+                                Improvements to the author
+                                earnings page
+                            </h5>
+                            <p> <i class="far fa-clock"></i> December 13, 2014</p>
+                            <p class="text-box-p">
+                                Lorem ipsum dolor sit amet, consectetuer
+                                adipiscing elit, sed diam nonummy nibh
+                                euismod tincidunt ut laoreet dolore. 
+                            </p>
+                            <ul>
+                                <li>
+                                    <h4>
+                                        <i class="icon fas fa-arrow-right"></i>
+                                        Envato's Most Wanted - Pagewiz 
+                                        Landing Page Templates - $14,000
+                                    </h4>
+                                </li>
+                                <li>
+                                    <h4>
+                                        <i class="icon fas fa-arrow-right "></i>
+                                        Item Support: Feeding back key 
+                                        dataand insights from the surveys
+                                    </h4>
+                                </li>
+                                <li class="button-box">
+                                    <h4>
+                                        <i class="icon fas fa-arrow-right"></i>
+                                        In progress - Our knowledge base 
+                                        will be unavailable for maintenance
+                                    </h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+           <div class="main-right">
+            
+           </div>
         </div>
-    </body>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>  
+  </body>
 </html>
