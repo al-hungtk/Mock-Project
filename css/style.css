@@ -1,19 +1,23 @@
 *{
     margin: 0 auto;
 }
+
 .overall{
     width: 1920px;
     background-image: url("../img/background-page.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .wraper{
     width: 1230px;
     background-color:white;
 }
+
 .wraper a{
     text-decoration: none;
 }
+
 li{
     list-style-type:  none;
 }
@@ -22,6 +26,7 @@ li{
         width: 1230px;
         position: relative;
     }
+
     .header span {
         font-family: Myriad Pro;
         font-size: 12px;
@@ -30,51 +35,83 @@ li{
         text-transform: uppercase;
         margin-top: 35px;
     }
+
     .header i{
         color: #fff;
     }
+
     .header ul li{
         display: inline-flex;
     }
+
     .list-header{
         width: 100%;
         min-height: 80px;
         background: #000000;
     }
+
     .left-header { 
         width: 780px;
         float: left;
         height:80px;
         margin-left: -15px;
     }
-    .left-header li:before{
+    .list-left li{
+        float: left;
+        margin-right: 35px;
+        position: relative;
+    }
+    .list-date{
+        font-size: 12px;
+        font-weight: 400;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .list-date:before{
         content: "";
         width: 5px;
         height: 6px;
+        -moz-border-radius: 3px 2px 2px 3px/3px;
         border-radius: 3px 2px 2px 3px/3px;
         background-color: #444;
-        margin-top: 40px;
+        -webkit-box-shadow: 0 1px rgb(255 255 255 / 35%), inset 1px 1px 2px rgb(0 0 0 / 35%);
+        -moz-box-shadow: 0 1px rgba(255,255,255,.35), inset 1px 1px 2px rgba(0,0,0,.35);
+        box-shadow: 0 1px rgb(255 255 255 / 35%), inset 1px 1px 2px rgb(0 0 0 / 35%);
+        position: absolute;
+        top: 40px;
+        right: -26px;
     }
+
     .label{
         margin-left: 15px;
     }
+
     .right-header { 
-        width: 290px;
+        width: 330px;
         float: right;
         height: 80px;
     }
+
     .right-header i {
         margin: 9px;
     }
-    .symbol li:before{
+
+    .list-icon-app:before{
         content: "";
         width: 5px;
         height: 6px;
         border-radius: 3px 2px 2px 3px/3px;
         background-color: #444;
         margin-top: 15px;
+        right: -11px;
+        position: absolute;
     }
 
+    .list-icon-app{
+        margin-right: 30px;
+        position: relative;
+    }
 
     .banner-logo{
         background: #fff;
@@ -85,58 +122,68 @@ li{
         width: 1230px;
         padding: 42px 0;
     }
+
     .logo-1{
         width: 442px;
         float: left;
         margin: 15px 0px 0px 30px;
     }
+
     .logo-2{
         width: 728px;
         float: right;
         margin-right: 30px;
     }
+
     .list-menu{
         width: 1230px;
         min-height: 90px;
         border-bottom: 2px solid;
     }
+
     .menu-item {
         border-bottom: 1px solid;
         height: 95px;
         background-color:#fff;
     }
+
     nav ul{
         padding: 15px 0px;
         position: relative;
     }
 
+
     nav li{
         float: left;
     }
 
-    .list-menu nav ul li .menu-content-before::before{
+    .menu-content-before::before{
         content: "//";
         color: #cccccc;
         position: relative;
         right: 30px;
     }
+
     nav a{
         display: table;
         color: black;
         position: relative;
-        margin: 22px 61px 9px 0px;
+        margin: 20px 51px 9px 0px;
         font-size: 18px;
+        font-weight: bold;
     }
+
     .nav-menu-left{
         width: 1100px;
         float: left;
         margin-left: 30px;
     }
+
     .icon-search{
         float: right;
         width: 50px;
         height: 47px;
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         text-align: center;
         line-height: 47px;
         color: #010000;
@@ -154,7 +201,7 @@ li{
         .main{
             width: 1230px;
             margin-top: 30px;
-            height: 1899px;
+            height: 1960px;
             border-bottom: 1px solid ;
         }
 
@@ -183,6 +230,7 @@ li{
             font-size: 16px;
             font-weight: 600;
             font-family: system-ui;
+            text-shadow: 2px 3px rgb(0 0 0 / 16%);
         }
 
         .last-news{
@@ -235,12 +283,14 @@ li{
         .aside{
             text-align: center;
         }
+
         .box-tweets{
             border: 1px solid rgba(0,0,0,0.1);
             height: 70px;
             width: 170px;
             margin: 7px 0px 3px 30px;
         }
+
         .img-content{
             border: 1px solid #eaeaea;
             padding: 3px;
@@ -249,9 +299,11 @@ li{
             height: 171px;
             line-height: 10;
         }
+
         .img-content img{
             box-shadow: 0px 0px 0px 13px #eaeaea;
         }
+
         .carousel-text-slide h5 {
             font-size: 32px;
             font-family: sans-serif;
@@ -260,6 +312,7 @@ li{
             left: -60px;
             top: 166px;
         }
+
         .carousel-text-slide  p{
             width: 140px;
             font-size: 13px;
@@ -267,16 +320,23 @@ li{
             text-align: center;
             color: #000;
         }
+
+        .carousel-text-slide a{
+            color: #20c6ff;
+        }
+
          .button-next {
             border: none;
             background-color: #ffffff12;
             margin:0px 25px;
         } 
+
         .icon-slide{
             color: silver;
             position: absolute;
             top: 25px;
         }
+
         .new-cate  {
             border-top: 1px solid rgba(0,0,0,0.1);
             border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -285,15 +345,18 @@ li{
             width: 170px;
             margin: 0px 30px 7px;
         }
+
         .new-cate p{
             margin: 16px 0px;
         }
+
         .form-horizontal li{
             border-bottom: 1px solid #dfdfdf;
             padding: 12px 0 8px;
             width: 170px;
             margin: 0;
         }
+
         .vote a{
             height: 63px;
             padding: 0 15px;
@@ -325,6 +388,7 @@ li{
         width: 570px;
         float: left;
     }
+
     .slide-img {
         position: absolute;
         z-index: 2;
@@ -333,18 +397,21 @@ li{
         list-style: none;
         top: 15px;
     }
+
     .slide-img button{
         width: 15px;
         height: 15px;   
         opacity: 0.5;
     }
+
     .box-alt{
         clear: both;
-        margin: 30px 0px 20px;
+        margin: 35px 0px 20px;
         border: 1px solid rgba(0,0,0,0.1);
         text-align: center;
         height:70px;
     }
+
     .box-alt h5{
         width: 547px;
         border: 1px solid rgba(0,0,0,0.1);
@@ -355,15 +422,20 @@ li{
         font-weight: 600;
         font-family: system-ui;
     }
+
     .text-mutedd{
         font-size:18px;
         font-family: sans-serif;
+        width: 270px;
     }
+
     .colum-1{
         width: 271px;
         float: left;
         position: relative;
+        margin-bottom: 13px;
     }
+
     .text-img{
         font-size: 13px;
         font-weight: bold;
@@ -377,28 +449,37 @@ li{
         top: 20px;
         left: 20px;
     }
+
     .box-show h5{
         margin: 10px 0px;
         font-weight: 500;
     }
+
     .carousel-inner span{
         position: absolute;
         right: 20px;
-        top: 15px;
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
+        top: 20px;
         font-size: 13px;
         font-weight: bold;
         text-transform: uppercase;
-        padding: 2px;
+        color: #FFF;
+        line-height: 21px;
+        padding: 0px 5px;
+        background: rgba(0, 0, 0, 0.5);
+        display: table;
+        float: right;
+        margin: -10px;
     }
+
     .cell{
         position: relative;
     }
+
     .cell-text{
         font-size:14px;
         width:270px;
     }
+
     .icon-play i{
         box-shadow: 0 0 5px rgb(0 0 0 / 44%);
         border: solid 3px #fff;
@@ -414,39 +495,47 @@ li{
         color: #fff;
         z-index: 66;
     }
+
     .colum-2{
         width: 271px;
         float: right;
         position: relative;
+        margin-bottom: 13px;
     }
     .colum-3{
         width: 270px;
         float: left;
     }
+
     .colum-4{
         width: 300px;
         float: right;
         height: 460px;
         border: 1px solid rgba(0,0,0,0.1);
     }
+
     .box-center{
         width: 285px;
         float: right;
     }
+
     .box-center h4{
         font-size: 14px;
         width: 225px;
         font-weight: 700;
     }
+
     .box-center h5{
         margin: 20px 0px;
         font-size: 21px;
         font-weight: 600;
     }
+
     .text-box-p{
         width: 295px;
         font-size: 14px;
     }
+
     .box-center ul li{
         float: none;
         width: 300px;
@@ -456,9 +545,11 @@ li{
         padding: 22px 20px 16px 43px;
         left: -14px;
     }
+
     .box-center ul{
         padding: 0px;
     }
+
     .box-center .icon{
         color: red;
         position: absolute;
@@ -474,12 +565,14 @@ li{
         float: right;
         margin: 0px 30px ;
     }
+    
     .title-main{
         width: 370px;
         height: 70px;
         border: 1px solid rgba(0,0,0,0.1);
         margin-bottom: 20px;
     }
+
     .title-main span{
         border: 1px solid rgba(0,0,0,0.1);
         width: 348px;
@@ -491,45 +584,57 @@ li{
         font-size: 16px;
         font-weight: 600;
         font-family: system-ui;
-
+        text-shadow: 2px 3px rgb(0 0 0 / 16%);
     }
+
     .main-right ul {
         padding:0px;
     }
+
     .img-popular{
         width: 110px;
         float: left;
+        margin:0;
     }
+
     .text-icon{
         font-size:13px;
         margin-bottom: 10px;
+    }
+    .list-ul{
+        width: 370px;
+        float: left;
+        margin-bottom: 30px;
     }
     .popular-news-text{
         width: 240px;
         float: right;
     }
+
     .popular-news-text h4{
         font-size: 15px;
         font-family: serif;
         font-weight: 600;
     }
+
     .dash-main{
         width: 370px;
-        height:1px;
         height: 1px;
-        background: #e5e5e5;
-        margin: 15px auto;
+        margin: 20px auto;
         float: left;
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
+    
     .side-widget  {
         margin-bottom: 30px;
         clear: both;
     }
+
     .side-widget img   {
         background: #e5e5e5;
         padding: 20px;
     }
+
     .side-widget a{
         border: 1px solid #e5e5e5;
         padding: 10px;
@@ -537,10 +642,12 @@ li{
         width: 100%;
         text-align: center;
     }
+
     .designed li{
         position: relative;
         margin-bottom: 25px;
     }
+
     .designed h5{
         position:absolute;
         bottom: 10px;
@@ -549,6 +656,7 @@ li{
         font-size: 18px;
         font-family: serif;
     }
+
     .designed i{
         box-shadow: 0 0 5px rgb(0 0 0 / 44%);
         border: solid 3px #fff;
@@ -564,6 +672,7 @@ li{
         color: #fff;
         z-index: 66;
     }
+
     .designed p{
         position: absolute;
         top: 20px;
@@ -586,6 +695,7 @@ li{
         background-color: black;
         border: 2px solid;
     }
+
 /* Open Footer */
     .footer {
         width: 1230px;
@@ -611,14 +721,13 @@ li{
         height: 38px;
         line-height: 48px;
         padding: 0;
-        width: 130px;
+        width: 245px;
         text-align: center;
-        font-weight: 400;
+        font-weight: 600;
         text-transform: uppercase;
         display: table;
         margin: 0 auto;
-        width: 100%;
-        font-size: 16px;
+        font-size: 17px;
         color: #fff;
         text-shadow: 2px 3px rgb(0 0 0 / 16%);
     }
@@ -680,43 +789,53 @@ li{
         position: absolute;
         margin: 40px -10px;
     }
+
     .facebook-icon img{
         width: 40px;
     }
+
     .icon-setting{
         float: left;
         margin-right: 8px;
     }
+
     .text-facebook{
         width: 230px;
         color: #5890ff;
     }
+
     .number{
         color: #111111;
     }
+
     .footer-bottom{
         width: 1230px;
         clear:both;
         background: #1d1d1d;
         padding: 30px 0 40px;
     }
+
     .tail-2 {
         width: 1230px;
         clear: both;
         text-align: center;
     }
+
     .tail-2 p{
         color: #b2b2b2;
         font-size: 12px;
         margin: 10px 0px;
     }
+
     .footer-links{
         display: table;
         margin: 45px 235px;
     }
+
     .footer-bottom a{
         color: #b2b2b2;
     }
+
     .footer-links li:after {
         content: "";
         width: 2px;
@@ -729,6 +848,7 @@ li{
         border-right: 1px solid #1b1b1b;
         padding: 0px;
     }
+
     .footer-links li {
         float: left;
         margin: 0 20px;
