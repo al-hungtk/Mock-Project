@@ -1,71 +1,70 @@
-<!doctype html>
-<html lang="en">
+<?php
+    include ('View/Admin/layouts/master.php');
+    
+?>
+<div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
 
-<head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!--[ daily sales section ] start-->
+                            <div class="col-md-2">
+                                <a name="" id="" class="btn btn-primary" href="?controller=postcontroller&action=create"
+                                    role="button">ADD</a>
+                            </div>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+                            <table class="table table-light table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Name</th>
+                                        <th>title</th>
+                                        <th>Author</th>
+                                        <th>Category_id</th>
+                                        <th>Maxdate</th>
+                                        <th>Information</th>
+                                        <th>Summary</th>
+                                        <th>Picture</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($post as $key => $value):?>
+                                    <tr>
+                                        <td><?php echo $key+1?></td>
+                                        <td><?php echo $value['name'];?></td>
+                                        <td><?php echo $value['title'];?></td>
+                                        <td><?php echo $value['author'];?></td>
+                                        <td><a href="?controller=categorycontroller&action=list_category&id=<?php echo $value['name'] ?>"
+                                                class="btn btn-warning "><?php echo $value['category_id'];?></a></td>
+                                        <td><?php echo $value['maxdate'];?></td>
+                                        <td><textarea name="" id="" cols="90" rows="10"
+                                                readonly><?php echo $value['information'];?></textarea>
+                                        </td>
+                                        <td><?php echo $value['summary'];?></td>
+                                        <td><img src="public/images/post/<?php echo $value['picture'];?>" width="100"
+                                                alt=""></td>
+                                        <td>
+                                            <a href="?controller=postcontroller&action=edit&id=<?php echo $value['id'] ?>"
+                                                class="btn btn-warning">Edit</a>
 
-<body>
-    <div class="col-md-2">
-        <a name="" id="" class="btn btn-primary" href="?controller=postcontroller&action=create" role="button">ADD</a>
+                                            <a href="?controller=postcontroller&action=delete&id=<?php echo $value['id'] ?>"
+                                                class="btn btn-warning">DEL</a>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <table class="table table-light">
-        <thead class="thead-light">
-            <tr>
-                <th>STT</th>
-                <th>Name</th>
-                <th>Publisher</th>
-                <th>Author</th>
-                <th>Category_id</th>
-                <th>Maxdate</th>
-                <th>Num</th>
-                <th>Summary</th>
-                <th>Picture</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($post as $key => $value):?>
-            <tr>
-                <td><?php echo $key+1?></td>
-                <td><?php echo $value['name'];?></td>
-                <td><?php echo $value['publisher'];?></td>
-                <td><?php echo $value['author'];?></td>
-                <td><?php echo $value['category_id'];?></td>
-                <td><?php echo $value['maxdate'];?></td>
-                <td><?php echo $value['num'];?></td>
-                <td><?php echo $value['summary'];?></td>
-                <td><img src="public/images/<?php echo $value['picture'];?>" width="100" alt=""></td>
-                <td>
-                    <a href="?controller=postcontroller&action=edit&id=<?php echo $value['id'] ?>"
-                        class="btn btn-warning">Edit</a>
-
-                    <a href="?controller=postcontroller&action=delete&id=<?php echo $value['id'] ?>"
-                        class="btn btn-warning">DEL</a>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
+</div>

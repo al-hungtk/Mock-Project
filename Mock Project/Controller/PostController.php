@@ -6,12 +6,19 @@
                     $action = filter_input(INPUT_GET, 'action');
                     if(empty($action)){
                         $action = 'index';
+                        
                     }
-                }
+                } 
+                // include ('View/error/error_404.php');
+                
                 switch($action){
                     case 'index':
-                        $post = Post::getpost();
-                        include ('View/Admin/Post/index.php');
+                        if(isset($_SESSION['auth'])){
+                            $post = Post::getpost();
+                            include ('View/Admin/Post/index.php');
+                            break;  
+                        }
+                        include ('View/Admin/login.php');
                         break;
                     case 'create':
                         $categories = Category::getcate();
@@ -20,14 +27,14 @@
                         break;
                     case 'store':
                         $name = filter_input(INPUT_POST, 'name');
-                        $publisher = filter_input(INPUT_POST, 'publisher');
+                        $title = filter_input(INPUT_POST, 'title');
                         $author = filter_input(INPUT_POST, 'author');
                         $category_id = filter_input(INPUT_POST, 'category_id');
                         $maxdate = filter_input(INPUT_POST, 'maxdate');
-                        $num = filter_input(INPUT_POST, 'num');
+                        $information = filter_input(INPUT_POST, 'information');
                         $summary = filter_input(INPUT_POST, 'summary');
                         //Xử lý lưu ảnh lên server
-                        $image_dir_path = getcwd().'/public/images';
+                        $image_dir_path = getcwd().'/public/images/post';
                         if(isset($_FILES['picture'])){
                             $filename = $_FILES['picture']['name'];
                             if(!empty($filename)){
@@ -41,9 +48,9 @@
                             $picture="";
                             echo "image null";
                         }
-                        Post::add( $name, $publisher, $author, $category_id, $maxdate, $num, $summary, $picture);
+                        Post::add( $name, $title, $author, $category_id, $maxdate, $information, $summary, $picture);
                         $post = Post::getpost();
-                        include ('View/Admin/Post/index.php');
+                        header('Location: .?controller=postcontroller&action=index');
                         break;
                             break;
                     case 'edit':
@@ -57,13 +64,13 @@
                         $name = filter_input(INPUT_POST, 'name');
                         $category_id = filter_input(INPUT_POST, 'category_id');
                         $author = filter_input(INPUT_POST, 'author');
-                        $publisher = filter_input(INPUT_POST, 'publisher');
+                        $title = filter_input(INPUT_POST, 'title');
                         $maxdate = filter_input(INPUT_POST, 'maxdate');
-                        $num = filter_input(INPUT_POST, 'num');
+                        $information = filter_input(INPUT_POST, 'information');
                         $summary = filter_input(INPUT_POST, 'summary');
                       
                         //xử lý hình ảnh 
-                        $image_dir_path = getcwd().'/public/images';
+                        $image_dir_path = getcwd().'/public/images/post';
                         if(isset($_FILES['picture'])){
                             $filename = $_FILES['picture']['name'];
                             if(!empty($filename)){
@@ -76,21 +83,19 @@
                         else{				
                             $picture="";
                         }
-                        // $a = [$id, $name, $publisher, $author, $category_id, $maxdate, $num, $summary, $picture];
+                        // $a = [$id, $name, $title, $author, $category_id, $maxdate, $information, $summary, $picture];
                         // var_dump($a);
                         if (empty($picture)) {
                             $picture = filter_input(INPUT_POST, 'old_picture');
                         }
-                        var_dump($author);
-                        Post::updatepost($id, $name, $publisher, $author, $category_id, $maxdate, $num, $summary, $picture);
+                        Post::updatepost($id, $name, $title, $author, $category_id, $maxdate, $information, $summary, $picture);
                         $post = Post::getpost();
-                        include ('View/Admin/Post/index.php');
+                        header('Location: .?controller=postcontroller&action=index');
                         break;
                     case 'delete':
                         $id = filter_input(INPUT_GET, 'id');
                         Post::delete($id);
                         $post = Post::getpost();
-                        var_dump($id);
                         include ('View/Admin/Post/index.php');
                         break;
                     default:

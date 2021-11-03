@@ -9,10 +9,18 @@
                     $action = 'list_category';
                 }
             }
+            // include ('View/error/error_404.php');
+
             switch($action){
                 case 'list_category':
-                    $categories = Category::getcate();
-                    include('View/Admin/Categories/index.php');
+                    if(isset($_SESSION['auth'])){
+
+                        $categories = Category::getcate();
+                        include('View/Admin/Categories/index.php');
+                        break;
+                    }
+                    include ('View/Admin/login.php');
+                    break;
                 break;
                 case 'add':
                     include('View/Admin/Categories/add.php');
@@ -22,7 +30,8 @@
                     $moreinfo = filter_input(INPUT_POST,'more_Info');
                     Category::add( $categoryname, $moreinfo);
                     $categories = Category::getcate();
-                    include('View/Admin/Categories/index.php');
+                    header('Location: .?controller=categorycontroller&action=list_category');
+                    exit();
                     break;
                 case 'edit':
                     $id = filter_input(INPUT_GET,'id');
@@ -35,13 +44,13 @@
                     $moreinfo = filter_input(INPUT_POST,'moreinfo');
                     Category::updatecategory($id, $categoryname, $moreinfo);
                     $categories = Category::getcate();
-                    include('View/Admin/Categories/index.php');
+                    header('Location: .?controller=categorycontroller&action=list_category');
                     break;
                 case 'delete':
                     $id = filter_input(INPUT_GET,'id');
                     Category::deletecategory($id);
                     $categories = Category::getcate();
-                    include('View/Admin/Categories/index.php');
+                    header('Location: .?controller=categorycontroller&action=list_category');
                     break;
                 default:
                   //code

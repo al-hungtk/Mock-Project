@@ -1,14 +1,10 @@
 <?php
 @session_start();
-    include ('Model/Database.php');
-    include ('Model/PostModel.php');
-    include ('Model/CategoryModel.php');
-    include ('Model/AdminModel.php');
-
+include('Route/route.php');
     
 $controller = filter_input(INPUT_GET, 'controller');
 if (empty($controller)) {
-    $controller = 'admincontroller';
+    $controller = 'homecontroller';
 }
 
 switch ($controller) {

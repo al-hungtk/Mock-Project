@@ -8,6 +8,8 @@
                     $action = 'home';
                 }
             }
+            // include ('View/error/error_404.php');
+
             switch($action){
                 case 'home':
                     $categories = Category::getcate();

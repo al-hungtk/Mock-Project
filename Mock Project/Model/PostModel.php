@@ -15,18 +15,18 @@
             }
         }
 
-        public static function add($name, $publisher, $author, $category_id, $maxdate, $num, $summary, $picture){
+        public static function add($name, $title, $author, $category_id, $maxdate, $information, $summary, $picture){
             $db= Database::getDB();
             try{
-                $query = "INSERT INTO post(name, publisher, author, category_id, maxdate, num, summary, picture)
-                VALUE(:name, :publisher, :author, :category_id, :maxdate, :num, :summary, :picture)";
+                $query = "INSERT INTO post(name, title, author, category_id, maxdate, information, summary, picture)
+                VALUE(:name, :title, :author, :category_id, :maxdate, :information, :summary, :picture)";
                 $statement = $db->prepare($query);
                 $statement->bindValue(':name', $name);
-                $statement->bindValue(':publisher', $publisher);
+                $statement->bindValue(':title', $title);
                 $statement->bindValue(':author', $author);
                 $statement->bindValue(':category_id', $category_id);
                 $statement->bindValue(':maxdate', $maxdate);
-                $statement->bindValue(':num', $num);
+                $statement->bindValue(':information', $information);
                 $statement->bindValue(':summary', $summary);
                 $statement->bindValue(':picture', $picture);
                 $statement->execute();
@@ -51,21 +51,21 @@
                 echo "Lỗi không tìm thấy id ".$error_message;
             }
         }
-        public static function updatepost($id,$name, $publisher, $author, $category_id, $maxdate, $num, $summary, $picture){
+        public static function updatepost($id,$name, $title, $author, $category_id, $maxdate, $information, $summary, $picture){
             $db = Database::getDB();
             try {
-                $query = "UPDATE post SET name = :name, publisher = :publisher, author = :author,
-                category_id = :category_id, maxdate = :maxdate, num = :num, summary = :summary, 
+                $query = "UPDATE post SET name = :name, title = :title, author = :author,
+                category_id = :category_id, maxdate = :maxdate, information = :information, summary = :summary, 
                 picture = :picture
                 WHERE id = :id";
                 $statement = $db->prepare($query);
                 $statement -> bindValue(':id',$id);
                 $statement -> bindValue(':name',$name);
-                $statement ->bindValue(':publisher',$publisher);
+                $statement ->bindValue(':title',$title);
                 $statement -> bindValue(':author', $author);
                 $statement->bindValue(':category_id', $category_id);
                 $statement->bindValue(':maxdate', $maxdate);
-                $statement->bindValue(':num', $num);
+                $statement->bindValue(':information', $information);
                 $statement->bindValue(':summary', $summary);
                 $statement->bindValue(':picture', $picture);
                 $statement -> execute();
@@ -78,7 +78,7 @@
         public static function delete($id){
             $db = Database::getDB();
             try{
-                $query = "DELETE FROM  post
+                $query = "DELETE FROM post
                 WHERE id = :id ";
                 $statement = $db->prepare($query);
                 $statement->bindValue(':id',$id);

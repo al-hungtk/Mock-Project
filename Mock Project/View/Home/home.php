@@ -48,7 +48,8 @@
                                 <i class="fab fa-pinterest-p"></i>
                             </li>
                             <li class="symbol">
-                                <span><a href="?controller=admincontroller&action=login">LOGIN</a></span>
+                                <span><a href="?controller=admincontroller&action=login"
+                                        style="color:#ffff">LOGIN</a></span>
                                 <!-- <form method="post">
                                     <button type="submit" name="action" value="logout"
                                         class="btn btn-primary">logout</button>
@@ -73,12 +74,14 @@
                     <nav class="nav-menu-left">
                         <ul>
                             <li><a href="#">HOME</a></li>
-                            <li><a href="#" class="menu-content-before">POLITICS</a></li>
-                            <li><a href="#" class="menu-content-before">BUSINESS</a></li>
+                            <?php foreach ($categories as $key => $value):?>
+                            <li><a href="" class="menu-content-before"><?php echo $value['categoryname']; ?></a></li>
+                            <?php endforeach;?>
+                            <!-- <li><a href="#" class="menu-content-before">BUSINESS</a></li>
                             <li><a href="#" class="menu-content-before">SPORT</a></li>
                             <li><a href="#" class="menu-content-before">TECHNOLOGY</a></li>
                             <li><a href="#" class="menu-content-before">SCIENCE</a></li>
-                        </ul>
+                        </ul> -->
                     </nav>
                     <div class="icon-search">
                         <i class="fas fa-search"></i>
