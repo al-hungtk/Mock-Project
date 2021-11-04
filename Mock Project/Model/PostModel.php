@@ -1,5 +1,20 @@
 <?php 
     class Post{
+
+        public static function getpost_view(){
+            $db = Database::getDB();
+            try{
+                $query = "SELECT * FROM post ORDER BY created_at DESC LIMIT 5";
+                $statement = $db->prepare($query);
+                $statement -> execute();
+                $result = $statement->fetchAll();
+                return $result;
+            }catch ( PDOException $e) {
+                $error_message = $e->getMessage();
+                echo "Lỗi không tìm thấy data" . $error_message;
+                exit();
+            }
+        }
         public static function getpost(){
             $db = Database::getDB();
             try{

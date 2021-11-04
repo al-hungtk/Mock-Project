@@ -1,11 +1,12 @@
 <?php
 @session_start();
-include('Route/route.php');
+include('./Route/route.php');
     
 $controller = filter_input(INPUT_GET, 'controller');
 if (empty($controller)) {
     $controller = 'homecontroller';
 }
+
 
 switch ($controller) {
     case 'admincontroller':
@@ -21,5 +22,7 @@ switch ($controller) {
         include('Controller/CategoryController.php');
         break;
     default:
+        include ('View/error/error_404.php');
+        exit();
         break;
 }

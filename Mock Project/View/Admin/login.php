@@ -1,24 +1,6 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>Login Admin</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/login.css">
-    <!-- Bootstrap CSS -->
-    <link rel="icon" href="View/Admin/View/Admin/assets/images/favicon.ico" type="image/x-icon">
-    <!-- fontawesome icon -->
-    <link rel="stylesheet" href="View/Admin/assets/fonts/fontawesome/css/fontawesome-all.min.css">
-    <!-- animation css -->
-    <link rel="stylesheet" href="View/Admin/assets/plugins/animation/css/animate.min.css">
-    <!-- vendor css -->
-    <link rel="stylesheet" href="View/Admin/assets/css/style.css">
-
-</head>
-
-<body>
+<?php 
+    include('View/Admin/layouts/login_master.php');
+?>
     <form method="POST">
         <div class="login">
             <div class="auth-wrapper">
@@ -63,9 +45,3 @@
                 </div>
             </div>
     </form>
-
-    <script src="View/Admin/assets/js/vendor-all.min.js "></script>
-    <script src="View/Admin/assets/plugins/bootstrap/js/bootstrap.min.js "></script>
-</body>
-
-</html>

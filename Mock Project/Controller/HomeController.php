@@ -8,15 +8,15 @@
                     $action = 'home';
                 }
             }
-            // include ('View/error/error_404.php');
-
             switch($action){
                 case 'home':
                     $categories = Category::getcate();
-                    $post = Post::getpost();
+                    $post = Post::getpost_view();
                     include('View/Home/home.php');
                     break;
                 default:
+                    include ('View/error/error_404.php');
+                    exit();
                     break;
             }
 

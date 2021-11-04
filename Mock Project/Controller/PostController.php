@@ -99,6 +99,8 @@
                         include ('View/Admin/Post/index.php');
                         break;
                     default:
+                        include ('View/error/error_404.php');
+                        exit();
                         break;
                 }
         }
