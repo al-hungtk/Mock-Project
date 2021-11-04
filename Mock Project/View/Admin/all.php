@@ -2,12 +2,15 @@
     include ('View/Admin/layouts/master.php');
     
 ?>
+
 <div class="loader-bg">
     <div class="loader-track">
         <div class="loader-fill"></div>
     </div>
 </div>
-
+<h1>
+               
+</h1>
 <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
         <div class="pcoded-content">

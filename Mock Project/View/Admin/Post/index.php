@@ -44,10 +44,12 @@
                                         <td><a href="?controller=categorycontroller&action=list_category&id=<?php echo $value['name'] ?>"
                                                 class="btn btn-warning "><?php echo $value['category_id'];?></a></td>
                                         <td><?php echo $value['maxdate'];?></td>
-                                        <td><textarea name="" id="" cols="90" rows="10"
+                                        <td><textarea name="" id="" cols="70" rows="10"
                                                 readonly><?php echo $value['information'];?></textarea>
                                         </td>
-                                        <td><?php echo $value['summary'];?></td>
+                                        <td><textarea name="" id="" cols="70" rows="10"
+                                                readonly><?php echo $value['summary'];?></textarea>
+                                        </td>
                                         <td><img src="public/images/post/<?php echo $value['picture'];?>" width="100"
                                                 alt=""></td>
                                         <td>

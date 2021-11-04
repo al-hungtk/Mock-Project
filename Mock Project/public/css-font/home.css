@@ -183,6 +183,10 @@ nav a {
     margin-left: 30px;
 }
 
+.nav-menu-left a:hover {
+    color: red;
+}
+
 .icon-search {
     float: right;
     width: 50px;
@@ -385,7 +389,7 @@ nav a {
 /* END main-left */
 
 .carousel-item h5 {
-    font-size: 32px;
+    font-size: 27px;
     font-family: sans-serif;
     width: 476px;
     text-align: left;
@@ -875,3 +879,27 @@ nav a {
 
 
 /* End Footer  */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/*sub-menu*/
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f5f5f5;
+    z-index: 20;
+    list-style: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(88, 84, 84);
+}

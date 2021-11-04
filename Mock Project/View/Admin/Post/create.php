@@ -57,13 +57,13 @@
                                 <div class="form-group">
                                     <label for="">Information</label>
                                     <textarea class="form-control" type="text" name="information" id="" cols="140"
-                                        rows="10" placeholder="Enter your text"></textarea>
+                                        rows="10" placeholder="Enter your text" required="information"></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Summary</label>
-                                    <input class="form-control" type="text" name="summary" placeholder="Enter your name"
-                                        required>
+                                    <textarea class="form-control" type="text" name="summary" id="" cols="140"
+                                        rows="10" placeholder="Enter your summary" required="summary"></textarea>
                                 </div>
 
                                 <div class="form-group">

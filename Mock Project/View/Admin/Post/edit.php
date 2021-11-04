@@ -66,28 +66,23 @@
 
                                 <div class="form-group">
                                     <label for="">Information</label>
-                                    <textarea class="form-control" type="text" name="information" cols="140" rows="10"
-                                        placeholder="Enter your text"
-                                        value="<?php echo $post['information'] ?>"></textarea>
-
+                                    <input class="form-control" type="text" name="information" id="information"
+                                        value="<?php echo $post['information']?>" readonly>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Summary</label>
-                                    <input class="form-control" type="text" name="summary"
-                                        value="<?php echo $post['summary'] ?>">
+                                    <input class="form-control" type="text" name="summary" id="summary"
+                                        value="<?php echo $post['summary']?>" readonly>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Picture</label>
-                                    <img src="public/images/<?php echo $post['picture'] ?>" width="100px"
+                                    <img src="public/images/post/<?php echo $post['picture'] ?>" width="100px"
                                         alt="Image Post">
-                                    <input class="form-file" type="file" name="picture" class="form-control">
+                                    <input class="form-file" type="file" name="picture" value="public/images/post/<?php echo $post['picture'] ?>"class="form-control">
 
                                 </div>
-
-                                <!-- <div class="form-group">
-        </div> -->
 
                                 <button type="submit" class="btn btn-warning" name="action" value="update">Save</button>
 

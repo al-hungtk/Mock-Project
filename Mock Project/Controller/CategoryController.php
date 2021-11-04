@@ -9,12 +9,11 @@
                     $action = 'list_category';
                 }
             }
-            // include ('View/error/error_404.php');
 
             switch($action){
                 case 'list_category':
                     if(isset($_SESSION['auth'])){
-
+                            var_dump(22);
                         $categories = Category::getcate();
                         include('View/Admin/Categories/index.php');
                         break;
@@ -54,6 +53,8 @@
                     break;
                 default:
                   //code
+                  include ('View/error/error_404.php');
+                  exit();
                 break;
             }
         }

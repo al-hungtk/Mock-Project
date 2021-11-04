@@ -12,7 +12,7 @@
     <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
     <!-- https://cdnjs.com/libraries/font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="stylesheet" href="View/Home/css-font/home.css" type="text/css">
+    <link rel="stylesheet" href="public/css-font/home.css" type="text/css">
     <title>Hello, world!</title>
 </head>
 
@@ -26,7 +26,6 @@
                             <li class="list-date">
                                 <span>Tuesday, November, 4, 2014</span>
                             </li>
-
                             <li>
                                 <span class="label"><i class="far fa-sun"></i> 32° C</span>
                             </li>
@@ -36,20 +35,14 @@
                         <ul>
                             <li class="list-icon-app">
                                 <i class="fab fa-twitter"></i>
-
                                 <i class="fab fa-facebook-f"></i>
-
                                 <i class="fab fa-google-plus-g"></i>
-
                                 <i class="fas fa-rss"></i>
-
                                 <i class="fab fa-youtube"></i>
-
                                 <i class="fab fa-pinterest-p"></i>
                             </li>
                             <li class="symbol">
-                                <span><a href="?controller=admincontroller&action=login"
-                                        style="color:#ffff">LOGIN</a></span>
+                                <span><a href="?controller=admincontroller&action=login">LOGIN</a></span>
                                 <!-- <form method="post">
                                     <button type="submit" name="action" value="logout"
                                         class="btn btn-primary">logout</button>
@@ -62,10 +55,10 @@
             <div class="banner-logo">
                 <div class="list-logo">
                     <div class="logo-1">
-                        <span><img src="View/Home/img/logo.png" alt="Logo AZETE"></span>
+                        <span><img src="public/img/logo.png" alt="Logo AZETE"></span>
                     </div>
                     <div class="logo-2">
-                        <img src="View/Home/img/1.png" alt="Logo AZETE">
+                        <img src="public/img/1.png" alt="Logo AZETE">
                     </div>
                 </div>
             </div>
@@ -74,14 +67,24 @@
                     <nav class="nav-menu-left">
                         <ul>
                             <li><a href="#">HOME</a></li>
-                            <?php foreach ($categories as $key => $value):?>
-                            <li><a href="" class="menu-content-before"><?php echo $value['categoryname']; ?></a></li>
-                            <?php endforeach;?>
                             <!-- <li><a href="#" class="menu-content-before">BUSINESS</a></li>
                             <li><a href="#" class="menu-content-before">SPORT</a></li>
                             <li><a href="#" class="menu-content-before">TECHNOLOGY</a></li>
-                            <li><a href="#" class="menu-content-before">SCIENCE</a></li>
-                        </ul> -->
+                            <li><a href="#" class="menu-content-before">SCIENCE</a></li> -->
+                            <?php foreach ($categories as $key => $value):?>
+                            <li class="nav-item dropdown">
+                                <a class="menu-content-before" href="#"
+                                    id="navbarDropdown"><?php echo $value['categoryname'];?></a>
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
                     </nav>
                     <div class="icon-search">
                         <i class="fas fa-search"></i>
@@ -94,15 +97,18 @@
                         <p class="title-latest">LATEST NEWS</p>
                     </h5>
                     <ul class="last-news">
+
+                        <?php foreach ($post as $news):?>
                         <li>
-                            <strong>tech</strong>
+                            <strong><?php echo $news['category_id']?></strong>
                             <p> <i class="far fa-clock"></i> December 13, 2014</p>
                             <h4>
                                 Tempor Cum Soluta Nobis Eleifend Option Congue Nihil
                             </h4>
                         </li>
                         <span class="dash"></span>
-                        <li>
+                        <?php endforeach; ?>
+                        <!-- <li>
                             <strong>SPORT</strong>
                             <p> <i class="far fa-clock"></i> December 13, 2014</p>
                             <h4>
@@ -133,23 +139,22 @@
                                 Tempor Cum Soluta Nobis Eleifend Option Congue Nihil
                             </h4>
                         </li>
-                        <span class="dash"></span>
+                        <span class="dash"></span> -->
                         <li>
                             <a href="#" class="btn1">View All Posts</a>
                         </li>
                     </ul>
                     <div class="aside">
                         <div class="img-content">
-                            <img src="View/Home/img/docean.png" width="125" height="125" alt="img docean">
+                            <img src="public/img/docean.png" width="125" height="125" alt="img docean">
                         </div>
                         <h5 class="box-tweets">
                             <p class="title-latest">TWWETS</p>
                         </h5>
                         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-
                             <div class="carousel-inner">
                                 <div class="carousel-item active" data-bs-interval="10000">
-                                    <img src="View/Home/img/logo-pic.png" width="62" height="62" class="d-block"
+                                    <img src="public/img/logo-pic.png" width="62" height="62" class="d-block"
                                         alt=" Img Logo-pic">
                                     <div class="carousel-text-slide d-none d-md-block">
                                         <p>
@@ -160,7 +165,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="2000">
-                                    <img src="View/Home/img/logo-pic.png" width="62" height="62" class="d-block"
+                                    <img src="public/img/logo-pic.png" width="62" height="62" class="d-block"
                                         alt="Img Logo-pic">
                                     <div class="carousel-text-slide d-none d-md-block">
                                         <p>
@@ -171,7 +176,7 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="View/Home/img/logo-pic.png" width="62" height="62" class="d-block"
+                                    <img src="public/img/logo-pic.png" width="62" height="62" class="d-block"
                                         alt="Img Logo-pic">
                                     <div class="carousel-text-slide d-none d-md-block">
                                         <p>
@@ -227,7 +232,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="main-center">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="slide-img">
@@ -241,9 +245,29 @@
                                 aria-label="Slide 4"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                             <?php foreach ($post as  $value): ?>
+                                <div class="carousel-item active">
+                                    <span><?php echo $value['category_id']?></span>
+                                    <img src="public/images/post/<?php echo $value['picture'];?>" width="570" height="460" alt="img LATEST NEWS">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>
+                                            <?php echo $value['name']?>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
                                 <span>ENTERTAINMENT</span>
-                                <img src="View/Home/img/slide-1.png" width="570" height="460" alt="img LATEST NEWS">
+                                <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>
+                                        Ongoing studio express service releasesThread
+                                    </h5>
+                                </div>
+                            </div>
+                            <?php endforeach;?>
+                            <!-- <div class="carousel-item">
+                                <span>ENTERTAINMENT</span>
+                                <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>
                                         Ongoing studio express service releasesThread
@@ -252,16 +276,7 @@
                             </div>
                             <div class="carousel-item">
                                 <span>ENTERTAINMENT</span>
-                                <img src="View/Home/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>
-                                        Ongoing studio express service releasesThread
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <span>ENTERTAINMENT</span>
-                                <img src="View/Home/img/slide-3.png" width="570" height="460" alt="img LATEST NEWS">
+                                <img src="public/img/slide-3.png" width="570" height="460" alt="img LATEST NEWS">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Ongoing studio express service releasesThread
                                     </h5>
@@ -269,12 +284,12 @@
                             </div>
                             <div class="carousel-item">
                                 <span>ENTERTAINMENT</span>
-                                <img src="View/Home/img/slide-4.png" width="570" height="460" alt="img LATEST NEWS">
+                                <img src="public/img/slide-4.png" width="570" height="460" alt="img LATEST NEWS">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Ongoing studio express service releasesThread
                                     </h5>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="box-alt">
@@ -285,7 +300,7 @@
                     <div class="box-show">
                         <div class="colum-1">
                             <div class="cell">
-                                <img src="View/Home/img/col-1.png" width="271" height="182" alt="img technology">
+                                <img src="public/img/col-1.png" width="271" height="182" alt="img technology">
                                 <div class="text-img">Technology</div>
                                 <h5>
                                     <p class="text-mutedd">
@@ -300,7 +315,7 @@
                                 </p>
                             </div>
                             <div class="cell">
-                                <img src="View/Home/img/col-3.png" width="271" height="182" alt="img SPORT">
+                                <img src="public/img/col-3.png" width="271" height="182" alt="img SPORT">
                                 <div class="text-img">SPORT</div>
                                 <h5>
                                     <p class="text-mutedd">
@@ -317,7 +332,7 @@
                         </div>
                         <div class="colum-2">
                             <div class="cell">
-                                <img src="View/Home/img/col-3.png" width="271" height="182" alt="img Culture">
+                                <img src="public/img/col-3.png" width="271" height="182" alt="img Culture">
                                 <div class="text-img">Culture</div>
                                 <div class="icon-play"><i class=" fa fa-play"></i></div>
                                 <h5>
@@ -333,7 +348,7 @@
                                 </p>
                             </div>
                             <div class="cell">
-                                <img src="View/Home/img/col-4.png" width="271" height="182" alt="img Traveling">
+                                <img src="public/img/col-4.png" width="271" height="182" alt="img Traveling">
                                 <div class="text-img">Traveling</div>
                                 <h5>
                                     <p class="text-mutedd">
@@ -357,7 +372,7 @@
                     <div class="box-technology">
                         <div class="colum-3">
                             <div class="cell">
-                                <img src="View/Home/img/technology.png" width="270" height="460" alt="IMG TECHNOLOGY">
+                                <img src="public/img/technology.png" width="270" height="460" alt="IMG TECHNOLOGY">
                             </div>
                         </div>
                         <div class="colum-4">
@@ -402,30 +417,26 @@
                     </div>
                     <div class="list-ul">
                         <ul>
+                            <?php foreach($post as $value):?>
                             <li>
                                 <p class="img-popular">
-                                    <img src="View/Home/img/popular-6.png" width="110" height="81"
-                                        alt="Driverless cars">
+                                    <img src="public/images/post/<?php echo $value['picture'];?>" width="110" height="81" alt="Driverless cars">
                                 </p>
-
                                 <div class="popular-news-text">
-
                                     <p class="text-icon"> <i class="far fa-clock">
-                                        </i> December 13, 2014 <i class="fas fa-comments"></i> 5
+                                        </i> <?php echo $value['created_at']; ?> <i class="fas fa-comments"></i> 5
                                     </p>
                                     <h4>
-                                        Driverless cars need to make their passengers feel like drivers
+                                        <?php echo $value['title']; ?>
                                     </h4>
                                 </div>
                                 <div class="dash-main"></div>
                             </li>
-
-                            <li>
+                            <?php endforeach;?>
+                            <!-- <li>
                                 <p class="img-popular">
-                                    <img src="View/Home/img/popular-2.png" width="110" height="81"
-                                        alt="Driverless cars">
+                                    <img src="public/img/popular-2.png" width="110" height="81" alt="Driverless cars">
                                 </p>
-
                                 <div class="popular-news-text">
                                     <p class="text-icon"> <i class="far fa-clock">
                                         </i> December 13, 2014 <i class="fas fa-comments"></i> 5
@@ -436,13 +447,10 @@
                                 </div>
                                 <div class="dash-main"></div>
                             </li>
-
                             <li>
                                 <p class="img-popular">
-                                    <img src="View/Home/img/popular-3.png" width="110" height="81"
-                                        alt="Driverless cars">
+                                    <img src="public/img/popular-3.png" width="110" height="81" alt="Driverless cars">
                                 </p>
-
                                 <div class="popular-news-text">
                                     <p class="text-icon"> <i class="far fa-clock">
                                         </i> December 13, 2014 <i class="fas fa-comments"></i> 5
@@ -453,13 +461,10 @@
                                 </div>
                                 <div class="dash-main"></div>
                             </li>
-
                             <li>
                                 <p class="img-popular">
-                                    <img src="View/Home/img/popular-4.png" width="110" height="81"
-                                        alt="Driverless cars">
+                                    <img src="public/img/popular-4.png" width="110" height="81" alt="Driverless cars">
                                 </p>
-
                                 <div class="popular-news-text">
                                     <p class="text-icon"> <i class="far fa-clock">
                                         </i> December 13, 2014 <i class="fas fa-comments"></i> 5
@@ -470,13 +475,10 @@
                                 </div>
                                 <div class="dash-main"></div>
                             </li>
-
                             <li>
                                 <p class="img-popular">
-                                    <img src="View/Home/img/popular-5.png" width="110" height="81"
-                                        alt="Driverless cars">
+                                    <img src="public/img/popular-5.png" width="110" height="81" alt="Driverless cars">
                                 </p>
-
                                 <div class="popular-news-text">
                                     <p class="text-icon"> <i class="far fa-clock">
                                         </i> December 13, 2014 <i class="fas fa-comments"></i> 5
@@ -485,12 +487,12 @@
                                         US president's armored car and gum-chewing drew lots of attention
                                     </h4>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="side-widget">
                         <a href="#">
-                            <img src="View/Home/img/codecanyon.png" alt=" img codecanyon">
+                            <img src="public/img/codecanyon.png" alt=" img codecanyon">
                         </a>
                     </div>
                     <div class="title-main">
@@ -498,14 +500,14 @@
                     </div>
                     <ul class="designed">
                         <li>
-                            <img src="View/Home/img/designed-1.png" width="370" height="201" alt="MOST COMMENTED 1">
+                            <img src="public/img/designed-1.png" width="370" height="201" alt="MOST COMMENTED 1">
                             <h5>
                                 Designed BY the Community, FOR the Community!
                             </h5>
                             <p>ENTERTAINMENT</p>
                         </li>
                         <li>
-                            <img src="View/Home/img/designed-2.png" width="370" height="201" alt="MOST COMMENTED 2">
+                            <img src="public/img/designed-2.png" width="370" height="201" alt="MOST COMMENTED 2">
                             <i class="fa fa-play"></i>
                             <h5>
                                 Designed BY the Community, FOR the Community!
@@ -513,13 +515,12 @@
                             <p>ENTERTAINMENT</p>
                         </li>
                         <li>
-                            <img src="View/Home/img/designed-3.png" width="370" height="201" alt="MOST COMMENTED 3">
+                            <img src="public/img/designed-3.png" width="370" height="201" alt="MOST COMMENTED 3">
                             <h5>
                                 Designed BY the Community, FOR the Community!
                             </h5>
                             <p>ENTERTAINMENT</p>
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -547,14 +548,10 @@
                             This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
                             Aenean sollicitudin, lorem quis bibendum auctor duis sed odio sit.
                         </p>
-
                         <p>
                             amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a
                             odio tincidunt auctor a ornare
                         </p>
-
-
-
                     </div>
                     <div class="tail-1">
                         <h5>
@@ -562,28 +559,28 @@
                         </h5>
                         <ul class="img-flickr">
                             <li>
-                                <img src="View/Home/img/flickr-1.png" width="59" height="60" alt="Img GALLERY 1">
+                                <img src="public/img/flickr-1.png" width="59" height="60" alt="Img GALLERY 1">
                             </li>
                             <li>
-                                <img src="View/Home/img/flickr-2.png" width="59" height="60" alt="Img GALLERY 2">
+                                <img src="public/img/flickr-2.png" width="59" height="60" alt="Img GALLERY 2">
                             </li>
                             <li>
-                                <img src="View/Home/img/flickr-3.png" width="59" height="60" alt="Img GALLERY 3">
+                                <img src="public/img/flickr-3.png" width="59" height="60" alt="Img GALLERY 3">
                             </li>
                             <li>
-                                <img src="View/Home/img/flickr-4.png" width="59" height="60" alt="Img GALLERY 4">
+                                <img src="public/img/flickr-4.png" width="59" height="60" alt="Img GALLERY 4">
                             </li>
                             <li>
-                                <img src="View/Home/img/flickr-5.png" width="59" height="60" alt="Img GALLERY 5">
+                                <img src="public/img/flickr-5.png" width="59" height="60" alt="Img GALLERY 5">
                             </li>
                             <li>
-                                <img src="View/Home/img/flickr-6.png" width="59" height="60" alt="Img GALLERY 6">
+                                <img src="public/img/flickr-6.png" width="59" height="60" alt="Img GALLERY 6">
                             </li>
                             <li>
-                                <img src="View/Home/img/flickr-7.png" width="59" height="60" alt="Img GALLERY 7">
+                                <img src="public/img/flickr-7.png" width="59" height="60" alt="Img GALLERY 7">
                             </li>
                             <li>
-                                <img src="View/Home/img/flickr-8.png" width="59" height="60" alt="Img GALLERY 8">
+                                <img src="public/img/flickr-8.png" width="59" height="60" alt="Img GALLERY 8">
                             </li>
                         </ul>
                     </div>
@@ -594,15 +591,14 @@
                         <div class="facebook-widget">
                             <ul class="facebook-info">
                                 <li>
-                                    <p class="icon-setting"><img src="View/Home/img/setting.png" width="50" height="50"
+                                    <p class="icon-setting"><img src="public/img/setting.png" width="50" height="50"
                                             alt="Setting FACEBOOK"></p>
                                 </li>
                                 <li>
                                     <p class="text-facebook">
                                         <a href="#">
                                             Facebook Developers <i class="fas fa-check-circle"></i>
-                                            <img src="View/Home/img/facebook-like.png" width="50"
-                                                alt="Icons for Facebook">
+                                            <img src="public/img/facebook-like.png" width="50" alt="Icons for Facebook">
                                             <span class="number">3, 108, 789 </span>
                                         </a>
                                     </p>
@@ -613,13 +609,11 @@
                 </div>
                 <div class="footer-bottom">
                     <div class="tail-2">
-                        <img src="View/Home/img/azeta-footer.png" alt="img logo azeta-footer">
+                        <img src="public/img/azeta-footer.png" alt="img logo azeta-footer">
                         <p>
-
                             © Copyright Gazeta - All rights reserved.<br> Registered in Melbourne, No 13245678.
                             Registered Office: ENVATO Graphics Ltd. 4 Royton Square, Bakewell Road, Orton Westgate,
                             Melbourne PE1 2GX.
-
                         </p>
                     </div>
                     <ul class="footer-links">
@@ -630,14 +624,12 @@
                         <li><a href="#">Sitemap</a></li>
                         <li><a href="#">Terms &amp; Conditions</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                    </ul>
+                    </ul </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js">
-    </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js">
+        </script>
 </body>
 
 </html>

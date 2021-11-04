@@ -9,7 +9,6 @@
                     $action = 'index';
                 }
             }
-            // include ('View/error/error_404.php');
             switch($action){
                 case 'index':
                     if(isset($_SESSION['auth'])){
@@ -69,13 +68,10 @@
                         }
                     }
                     else{				
-                        // $picture="";
                         echo '<script language="javascript">';
                         echo 'alert("ERROR Image Null")';
                         echo '</script>';    
                     }
-                    // $a = [$name,$email,$password, $picture];
-                    // var_dump($a);
                     Admin::addadmin($name, $email, $password, $picture);
                     $admin = Admin::getadmin();
                     header('Location: .?controller=admincontroller&action=login');
@@ -121,6 +117,8 @@
 		            exit;
                     break;
                 default:
+                    include ('View/error/error_404.php');
+                    exit();
                     break;
             }
         }

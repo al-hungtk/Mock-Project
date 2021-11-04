@@ -26,7 +26,7 @@
                             <li class=""><a href="?controller=categorycontroller&action=list_category" class="">Category<span class="pcoded-badge label label-danger">NEW</span></a></li>
                             <li class=""><a href="?controller=postcontroller&action=index" class="">Post<span class="pcoded-badge label label-danger">NEW</span></a></li>
                             <li class=""><a href="?controller=admincontroller&action=list_admin" class="">Admin<span class="pcoded-badge label label-danger">NEW</span></a></li>
-
+                            <li class=""><a href="?controller=homecontroller&action=home" class="">HOME PAGE USER<span class="pcoded-badge label label-danger">NEW</span></a></li>
                         </ul>
                     </li>
               
