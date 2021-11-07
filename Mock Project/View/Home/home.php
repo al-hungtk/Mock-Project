@@ -108,38 +108,6 @@
                         </li>
                         <span class="dash"></span>
                         <?php endforeach; ?>
-                        <!-- <li>
-                            <strong>SPORT</strong>
-                            <p> <i class="far fa-clock"></i> December 13, 2014</p>
-                            <h4>
-                                Tempor Cum Soluta Nobis Eleifend Option Congue Nihil
-                            </h4>
-                        </li>
-                        <span class="dash"></span>
-                        <li>
-                            <strong>BUSINESS</strong>
-                            <p> <i class="far fa-clock"></i> December 13, 2014</p>
-                            <h4>
-                                Tempor Cum Soluta Nobis Eleifend Option Congue Nihil
-                            </h4>
-                        </li>
-                        <span class="dash"></span>
-                        <li>
-                            <strong>ENTERTAINMENT</strong>
-                            <p> <i class="far fa-clock"></i> December 13, 2014</p>
-                            <h4>
-                                Tempor Cum Soluta Nobis Eleifend Option Congue Nihil
-                            </h4>
-                        </li>
-                        <span class="dash"></span>
-                        <li>
-                            <strong>ENTERTAINMENT</strong>
-                            <p> <i class="far fa-clock"></i> December 13, 2014</p>
-                            <h4>
-                                Tempor Cum Soluta Nobis Eleifend Option Congue Nihil
-                            </h4>
-                        </li>
-                        <span class="dash"></span> -->
                         <li>
                             <a href="#" class="btn1">View All Posts</a>
                         </li>
@@ -245,18 +213,8 @@
                                 aria-label="Slide 4"></button>
                         </div>
                         <div class="carousel-inner">
-                            <?php foreach ($post as  $value): ?>
-                                <div class="carousel-item ">
-                                    <span><?php echo $value['category_id']?></span>
-                                    <img src="public/images/post/<?php echo $value['picture'];?>" width="570" height="460" alt="img LATEST NEWS">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>
-                                            <?php echo $value['name']?>
-                                        </h5>
-                                    </div>
-                                </div>
-                                <?php endforeach;?>
-                                <div class="carousel-item">
+                              
+                                <div class="carousel-item active">
                                 <span>ENTERTAINMENT</span>
                                 <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
                                 <div class="carousel-caption d-none d-md-block">
@@ -265,7 +223,7 @@
                                     </h5>
                                 </div>
                             </div>
-                            <!-- <div class="carousel-item">
+                            <div class="carousel-item">
                                 <span>ENTERTAINMENT</span>
                                 <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
                                 <div class="carousel-caption d-none d-md-block">
@@ -289,7 +247,7 @@
                                     <h5>Ongoing studio express service releasesThread
                                     </h5>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="box-alt">
