@@ -1,7 +1,4 @@
-<?php
-    include ('View/Admin/layouts/master.php');
-    
-?>
+
 
 <div class="loader-bg">
     <div class="loader-track">
@@ -9,7 +6,7 @@
     </div>
 </div>
 <h1>
-               
+
 </h1>
 <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
@@ -253,7 +250,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-1.jpg"
+                                                                src="public/assets/images/user/avatar-1.jpg"
                                                                 alt="activity-user">Ida Jorgensen</h6>
                                                     </td>
                                                     <td>
@@ -273,7 +270,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-2.jpg"
+                                                                src="public/assets/images/user/avatar-2.jpg"
                                                                 alt="activity-user">Albert Andersen</h6>
                                                     </td>
                                                     <td>
@@ -293,7 +290,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-3.jpg"
+                                                                src="public/assets/images/user/avatar-3.jpg"
                                                                 alt="activity-user">Silje Larsen</h6>
                                                     </td>
                                                     <td>
@@ -312,7 +309,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-1.jpg"
+                                                                src="public/assets/images/user/avatar-1.jpg"
                                                                 alt="activity-user">Ida Jorgensen</h6>
                                                     </td>
                                                     <td>
@@ -348,7 +345,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-2.jpg"
+                                                                src="public/assets/images/user/avatar-2.jpg"
                                                                 alt="activity-user">Albert Andersen</h6>
                                                     </td>
                                                     <td>
@@ -367,7 +364,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-1.jpg"
+                                                                src="public/assets/images/user/avatar-1.jpg"
                                                                 alt="activity-user">Ida Jorgensen</h6>
                                                     </td>
                                                     <td>
@@ -386,7 +383,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-1.jpg"
+                                                                src="public/assets/images/user/avatar-1.jpg"
                                                                 alt="activity-user">Ida Jorgensen</h6>
                                                     </td>
                                                     <td>
@@ -405,7 +402,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-3.jpg"
+                                                                src="public/assets/images/user/avatar-3.jpg"
                                                                 alt="activity-user">Silje Larsen</h6>
                                                     </td>
                                                     <td>
@@ -441,7 +438,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-3.jpg"
+                                                                src="public/assets/images/user/avatar-3.jpg"
                                                                 alt="activity-user">Silje Larsen</h6>
                                                     </td>
                                                     <td>
@@ -460,7 +457,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-1.jpg"
+                                                                src="public/assets/images/user/avatar-1.jpg"
                                                                 alt="activity-user">Ida Jorgensen</h6>
                                                     </td>
                                                     <td>
@@ -479,7 +476,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-2.jpg"
+                                                                src="public/assets/images/user/avatar-2.jpg"
                                                                 alt="activity-user">Albert Andersen</h6>
                                                     </td>
                                                     <td>
@@ -498,7 +495,7 @@
                                                     <td>
                                                         <h6 class="m-0"><img class="rounded-circle  m-r-10"
                                                                 style="width:40px;"
-                                                                src="View/Admin/assets/images/user/avatar-1.jpg"
+                                                                src="public/assets/images/user/avatar-1.jpg"
                                                                 alt="activity-user">Ida Jorgensen</h6>
                                                     </td>
                                                     <td>
@@ -518,7 +515,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -526,3 +522,6 @@
         </div>
     </div>
 </div>
+<?php 
+include('View/Admin/layouts/master.php');
+?>

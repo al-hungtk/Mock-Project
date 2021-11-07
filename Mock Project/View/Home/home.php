@@ -101,9 +101,9 @@
                         <?php foreach ($post as $news):?>
                         <li>
                             <strong><?php echo $news['category_id']?></strong>
-                            <p> <i class="far fa-clock"></i> December 13, 2014</p>
+                            <p> <i class="far fa-clock"></i> <?php echo $news['maxdate']?></p>
                             <h4>
-                                Tempor Cum Soluta Nobis Eleifend Option Congue Nihil
+                                <?php echo $news['title']?>
                             </h4>
                         </li>
                         <span class="dash"></span>
@@ -149,7 +149,7 @@
                             <img src="public/img/docean.png" width="125" height="125" alt="img docean">
                         </div>
                         <h5 class="box-tweets">
-                            <p class="title-latest">TWWETS</p>
+                            <p class="title-latest">TWEETS</p>
                         </h5>
                         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -245,8 +245,8 @@
                                 aria-label="Slide 4"></button>
                         </div>
                         <div class="carousel-inner">
-                             <?php foreach ($post as  $value): ?>
-                                <div class="carousel-item active">
+                            <?php foreach ($post as  $value): ?>
+                                <div class="carousel-item ">
                                     <span><?php echo $value['category_id']?></span>
                                     <img src="public/images/post/<?php echo $value['picture'];?>" width="570" height="460" alt="img LATEST NEWS">
                                     <div class="carousel-caption d-none d-md-block">
@@ -255,6 +255,7 @@
                                         </h5>
                                     </div>
                                 </div>
+                                <?php endforeach;?>
                                 <div class="carousel-item">
                                 <span>ENTERTAINMENT</span>
                                 <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
@@ -264,7 +265,6 @@
                                     </h5>
                                 </div>
                             </div>
-                            <?php endforeach;?>
                             <!-- <div class="carousel-item">
                                 <span>ENTERTAINMENT</span>
                                 <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">

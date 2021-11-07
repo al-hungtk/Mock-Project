@@ -1,5 +1,4 @@
 <?php 
-
     class AdminController {
         public static function index() {
             $action = filter_input(INPUT_POST,'action');
@@ -27,6 +26,13 @@
                     }
                     break;
                 case 'login':
+                    if(isset($_SESSION['auth'])){
+                        $admin = Admin::getadmin();
+                        $categories = Category::getcate();
+                        $post = Post::getpost();
+                        include ('View/Admin/all.php');
+                        break;
+                    }
                     include ('View/Admin/login.php');
                     break;
                 case 'submit':
@@ -76,12 +82,7 @@
                     $admin = Admin::getadmin();
                     header('Location: .?controller=admincontroller&action=login');
                     break;
-                case 'edit':
-                    if(!empty($admin['id'])){
-                        $id = filter_input(INPUT_GET, 'id');
-                        include ('View/Admin/edit.php');
-                    }
-                    break;
+              
                 case 'update':
                     $id = filter_input(INPUT_POST, 'id');
                     $name = filter_input(INPUT_POST, 'name');
@@ -111,9 +112,15 @@
                     Admin::update($id, $name, $email, $password, $picture);
                     header('Location: .?controller=admincontroller&action=login');
                     break;
+                case 'change_password':
+                    // $admin = Admin::change_password($id);
+                    // header('Location: .?controller=admincontroller&action=change-password');
+                    // include ('View/Admin/change-password.php');
+                    break;
                 case 'logout':
                     session_destroy();
-                    include('View/Admin/Login.php');
+                    header('Location: .?controller=admincontroller&action=login');
+                    // header('View/Admin/Login.php');
 		            exit;
                     break;
                 default:
