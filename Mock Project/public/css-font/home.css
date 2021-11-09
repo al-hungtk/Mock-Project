@@ -1,4 +1,5 @@
-* {
+body {
+    width: 1920px;
     margin: 0 auto;
 }
 
@@ -7,11 +8,13 @@
     background-image: url("../img/background-page.png");
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0 auto;
 }
 
 .wraper {
     width: 1230px;
     background-color: white;
+    margin: 0 auto;
 }
 
 .wraper a {
@@ -211,7 +214,7 @@ nav a {
 .main {
     width: 1230px;
     margin-top: 30px;
-    height: 1960px;
+    height: 2000px;
     border-bottom: 1px solid;
 }
 
@@ -395,7 +398,7 @@ nav a {
     text-align: left;
     position: absolute;
     left: -60px;
-    top: -32px;
+    top: -45px;
 }
 
 .main-center {
@@ -438,16 +441,16 @@ nav a {
 }
 
 .text-mutedd {
-    font-size: 18px;
+    font-size: 15px;
     font-family: sans-serif;
     width: 270px;
 }
 
 .colum-1 {
-    width: 271px;
+    width: 285px;
     float: left;
     position: relative;
-    margin-bottom: 13px;
+    margin-bottom: 13 px;
 }
 
 .text-img {
@@ -483,6 +486,12 @@ nav a {
     display: table;
     float: right;
     margin: -10px;
+}
+
+.cell-1 {
+    position: relative;
+    padding: 7px;
+    height: 400px;
 }
 
 .cell {
@@ -901,5 +910,9 @@ nav a {
 }
 
 .dropdown-content a:hover {
+    background-color: rgb(88, 84, 84);
+}
+
+dropdown-content a:hover {
     background-color: rgb(88, 84, 84);
 }

@@ -13,7 +13,7 @@
     <!-- https://cdnjs.com/libraries/font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="public/css-font/home.css" type="text/css">
-    <title>Hello, world!</title>
+    <title>Post News ALL</title>
 </head>
 
 <body>
@@ -67,10 +67,7 @@
                     <nav class="nav-menu-left">
                         <ul>
                             <li><a href="#">HOME</a></li>
-                            <!-- <li><a href="#" class="menu-content-before">BUSINESS</a></li>
-                            <li><a href="#" class="menu-content-before">SPORT</a></li>
-                            <li><a href="#" class="menu-content-before">TECHNOLOGY</a></li>
-                            <li><a href="#" class="menu-content-before">SCIENCE</a></li> -->
+
                             <?php foreach ($categories as $key => $value):?>
                             <li class="nav-item dropdown">
                                 <a class="menu-content-before" href="#"
@@ -100,14 +97,21 @@
 
                         <?php foreach ($post as $news):?>
                         <li>
-                            <strong><?php echo $news['category_id']?></strong>
-                            <p> <i class="far fa-clock"></i> <?php echo $news['maxdate']?></p>
+                            <strong>
+                                <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>" style="color:red">
+                                    <?php echo $news['category_id']?>
+                                </a>
+                            </strong>
+                            <p> <i class="far fa-clock"></i> <?php echo $news['created_at']?></p>
                             <h4>
-                                <?php echo $news['title']?>
+                                <a href="" style="color:black">
+                                    <?php echo $news['title']?>
+                                </a>
                             </h4>
                         </li>
                         <span class="dash"></span>
                         <?php endforeach; ?>
+
                         <li>
                             <a href="#" class="btn1">View All Posts</a>
                         </li>
@@ -117,7 +121,7 @@
                             <img src="public/img/docean.png" width="125" height="125" alt="img docean">
                         </div>
                         <h5 class="box-tweets">
-                            <p class="title-latest">TWEETS</p>
+                            <p class="title-latest">TWWETS</p>
                         </h5>
                         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -213,41 +217,22 @@
                                 aria-label="Slide 4"></button>
                         </div>
                         <div class="carousel-inner">
-                              
-                                <div class="carousel-item active">
-                                <span>ENTERTAINMENT</span>
-                                <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
+                            <?php foreach ($post as $key => $value): ?>
+                            <div class="carousel-item <?php echo $key == 1 ? 'active' : ''?> ">
+                                <span><?php echo $value['category_id']?></span>
+                                <a href="">
+                                    <img src="public/images/post/<?php echo $value['picture'];?>" width="570"
+                                        height="460" alt="img LATEST NEWS">
+                                </a>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>
-                                        Ongoing studio express service releasesThread
+                                        <a href="" style="color:white">
+                                            <?php echo $value['name']?>
+                                        </a>
                                     </h5>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <span>ENTERTAINMENT</span>
-                                <img src="public/img/slide-2.png" width="570" height="460" alt="img LATEST NEWS">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>
-                                        Ongoing studio express service releasesThread
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <span>ENTERTAINMENT</span>
-                                <img src="public/img/slide-3.png" width="570" height="460" alt="img LATEST NEWS">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Ongoing studio express service releasesThread
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <span>ENTERTAINMENT</span>
-                                <img src="public/img/slide-4.png" width="570" height="460" alt="img LATEST NEWS">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Ongoing studio express service releasesThread
-                                    </h5>
-                                </div>
-                            </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                     <div class="box-alt">
@@ -256,71 +241,27 @@
                         </h5>
                     </div>
                     <div class="box-show">
-                        <div class="colum-1">
-                            <div class="cell">
-                                <img src="public/img/col-1.png" width="271" height="182" alt="img technology">
-                                <div class="text-img">Technology</div>
-                                <h5>
-                                    <p class="text-mutedd">
-                                        Are you using marketplace analytics?
+                        <nav>
+                            <?php foreach ($featured_news as $value):?>
+                            <li class="colum-1">
+                                <div class="cell-1">
+                                    <img src="public/images/post/<?php echo $value['picture'];?>" width="271" height="182" alt="img technology">
+                                    <div class="text-img"><?php echo $value['category_id']?></div>
+                                    <h5>
+                                        <a class="text-mutedd" href="" style="font-family: sans-serif;">
+                                            <?php echo $value['title']?>
+                                        </a>
+                                    </h5>
+                                    <p class="text-icon"> <i class="far fa-clock"></i>
+                                        <?php echo $value['created_at']?><i class="fas fa-comments"></i> 5</p>
+                                    <p class="cell-text">
+                                        <?php echo $value['name']?>
                                     </p>
-                                </h5>
-                                <p class="text-icon"> <i class="far fa-clock"></i> December 13, 2014 <i
-                                        class="fas fa-comments"></i> 5</p>
-                                <p class="cell-text">
-                                    We’re running a Cinemagraph contest where we want you to create Cinemagraph images
-                                    and we’ve got over $1,000 worth of prizes up for grabs courtesy ..
-                                </p>
-                            </div>
-                            <div class="cell">
-                                <img src="public/img/col-3.png" width="271" height="182" alt="img SPORT">
-                                <div class="text-img">SPORT</div>
-                                <h5>
-                                    <p class="text-mutedd">
-                                        Rating reminder emails and Email Settings panel
-                                    </p>
-                                </h5>
-                                <p class="text-icon"> <i class="far fa-clock"></i> December 13, 2014 <i
-                                        class="fas fa-comments"></i> 5</p>
-                                <p class="cell-text">
-                                    Good news everyone! Faceted search has landed and will be fully rolled out across
-                                    Envato Market over the next day. I recom mend reading through the release..
-                                </p>
-                            </div>
-                        </div>
-                        <div class="colum-2">
-                            <div class="cell">
-                                <img src="public/img/col-3.png" width="271" height="182" alt="img Culture">
-                                <div class="text-img">Culture</div>
-                                <div class="icon-play"><i class=" fa fa-play"></i></div>
-                                <h5>
-                                    <p class="text-mutedd">
-                                        Mobile friendly comments dashboard - now launched!
-                                    </p>
-                                </h5>
-                                <p class="text-icon"> <i class="far fa-clock"></i> December 13, 2014 <i
-                                        class="fas fa-comments"></i> 5</p>
-                                <p class="cell-text">
-                                    Yes you read that correctly, the shopping cart is leaving the pipeline! We’re
-                                    rolling out the shopping cart gradually across Envato Market over the next few..
-                                </p>
-                            </div>
-                            <div class="cell">
-                                <img src="public/img/col-4.png" width="271" height="182" alt="img Traveling">
-                                <div class="text-img">Traveling</div>
-                                <h5>
-                                    <p class="text-mutedd">
-                                        Introducing Envato's newest Marketplaces Developer...
-                                    </p>
-                                </h5>
-                                <p class="text-icon"> <i class="far fa-clock"></i> December 13, 2014 <i
-                                        class="fas fa-comments"></i> 5</p>
-                                <p class="cell-text">
-                                    On top of the new model proposal we said we’d come back with more information about
-                                    pricing and timelines. It turns out we’ll need to come back to you..
-                                </p>
-                            </div>
-                        </div>
+                                </div>
+                            </li>
+                            <?php endforeach; ?>
+                        </nav>
+
                     </div>
                     <div class="box-alt">
                         <h5>
@@ -378,7 +319,8 @@
                             <?php foreach($post as $value):?>
                             <li>
                                 <p class="img-popular">
-                                    <img src="public/images/post/<?php echo $value['picture'];?>" width="110" height="81" alt="Driverless cars">
+                                    <img src="public/images/post/<?php echo $value['picture'];?>" width="110"
+                                        height="81" alt="Driverless cars">
                                 </p>
                                 <div class="popular-news-text">
                                     <p class="text-icon"> <i class="far fa-clock">

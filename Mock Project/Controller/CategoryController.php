@@ -13,7 +13,7 @@
             switch($action){
                 case 'list_category':
                     if(isset($_SESSION['auth'])){
-                            var_dump(22);
+                            // var_dump(22);
                         $categories = Category::getcate();
                         include('View/Admin/Categories/index.php');
                         break;
@@ -22,26 +22,28 @@
                     break;
                 break;
                 case 'add':
+                    $categories = Category::getcate();
                     include('View/Admin/Categories/add.php');
                 break;
                 case 'store':
                     $categoryname = filter_input(INPUT_POST,'category_Name');
-                    $moreinfo = filter_input(INPUT_POST,'more_Info');
-                    Category::add( $categoryname, $moreinfo);
+                    $paren_id = filter_input(INPUT_POST,'paren_id');
+                    Category::add( $categoryname, $paren_id);
                     $categories = Category::getcate();
                     header('Location: .?controller=categorycontroller&action=list_category');
                     exit();
                     break;
                 case 'edit':
                     $id = filter_input(INPUT_GET,'id');
-                    $categories = Category::editCategories($id);    
+                    $category = Category::editCategories($id);  
+                    $categories = Category::getcate();  
                     include('View/Admin/Categories/edit.php');
                 break;
                 case 'save':
                     $id = filter_input(INPUT_POST,'id');
                     $categoryname = filter_input(INPUT_POST,'categoryname');
-                    $moreinfo = filter_input(INPUT_POST,'moreinfo');
-                    Category::updatecategory($id, $categoryname, $moreinfo);
+                    $paren_id = filter_input(INPUT_POST,'paren_id');
+                    Category::updatecategory($id, $categoryname, $paren_id);
                     $categories = Category::getcate();
                     header('Location: .?controller=categorycontroller&action=list_category');
                     break;

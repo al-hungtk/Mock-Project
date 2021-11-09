@@ -1,6 +1,35 @@
 <?php 
-    class Post{
 
+    class Post {
+        public static function  featured_news(){
+            $db = Database::getDB();
+            try{
+                $query = "SELECT * FROM post ORDER BY category_id and created_at DESC  LIMIT 4";
+                $statement = $db->prepare($query);
+                $statement->execute();
+                $result = $statement->fetchAll();
+                return $result;
+            }catch ( PDOException $e) {
+                $error_message = $e->getMessage();
+                echo "Lỗi không tìm thấy data" . $error_message;
+                exit();
+            }
+        }
+        public static function detail($id){
+            $db  = Database::getDB();
+            try{
+                $query = "SELECT * FROM post where id = :id";
+                $statement = $db->prepare($query);
+                $statement->bindValue(':id',$id);
+                $statement ->execute();
+                $result = $statement->fetch();
+                return $result;
+            }catch ( PDOException $e) {
+                $error_message = $e->getMessage();
+                echo "Lỗi không tìm thấy data" . $error_message;
+                exit();
+            }
+        }
         public static function getpost_view(){
             $db = Database::getDB();
             try{
