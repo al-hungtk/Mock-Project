@@ -14,7 +14,8 @@
 
 <body>
     <form action="" method="post" enctype="multipart/form-data">
-        <input class="form-control" type="hidden" name="id" id="name" placeholder="" value="<?php echo $admin['id']; ?>">
+        <input class="form-control" type="hidden" name="id" id="name" placeholder=""
+            value="<?php echo $admin['id']; ?>">
         <div class="form-group">
             <label for="">Current Password</label>
             <input class="form-control" type="password" name="current_password" id="currentPassword" placeholder=""

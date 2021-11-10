@@ -214,8 +214,7 @@ nav a {
 .main {
     width: 1230px;
     margin-top: 30px;
-    height: 2000px;
-    border-bottom: 1px solid;
+    clear: both;
 }
 
 
@@ -224,6 +223,7 @@ nav a {
 .main-left {
     width: 230px;
     float: left;
+    margin-bottom: 30px;
 }
 
 .main-left h5 {
@@ -336,6 +336,7 @@ nav a {
     line-height: 24px;
     text-align: center;
     color: #000;
+    margin: 0 auto;
 }
 
 .carousel-text-slide a {
@@ -372,6 +373,14 @@ nav a {
     padding: 12px 0 8px;
     width: 170px;
     margin: 0;
+}
+
+img.d-block {
+    margin: auto;
+}
+
+.vote {
+    margin-left: 30px;
 }
 
 .vote a {
@@ -529,6 +538,7 @@ nav a {
 .colum-3 {
     width: 270px;
     float: left;
+    margin-bottom: 30px;
 }
 
 .colum-4 {
@@ -536,6 +546,7 @@ nav a {
     float: right;
     height: 460px;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 .box-center {
@@ -718,6 +729,7 @@ nav a {
 .strikethrough {
     width: 1230px;
     height: 1px;
+    clear: both;
     margin-top: 2px;
     background-color: black;
     border: 2px solid;
@@ -729,6 +741,7 @@ nav a {
 .footer {
     width: 1230px;
     background-color: #111111;
+    clear: both;
     margin-top: 2px;
 }
 
@@ -858,7 +871,7 @@ nav a {
 
 .footer-links {
     display: table;
-    margin: 45px 235px;
+    margin: 45px 315px;
 }
 
 .footer-bottom a {
@@ -915,4 +928,22 @@ nav a {
 
 dropdown-content a:hover {
     background-color: rgb(88, 84, 84);
+}
+
+.pan {
+    border: 1px solid #000;
+    height: 1px;
+    clear: both;
+}
+
+.board {
+    width: 1150px;
+    margin: 0 auto;
+}
+
+.text-title {
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
 }

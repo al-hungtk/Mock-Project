@@ -24,12 +24,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input class="form-control" type="text" name="name"
-                                        value="<?php echo $post['name'] ?>">
-                                </div>
-
-                                <div class="form-group">
                                     <label for="">title</label>
                                     <input class="form-control" type="text" name="title"
                                         value="<?php echo $post['title'] ?>">
@@ -78,14 +72,23 @@
 
                                 <div class="form-group">
                                     <label for="">Picture</label>
+
+                                    <input class="form-file" type="file" name="picture"
+                                        value="public/images/post/<?php echo $post['picture'] ?>" class="form-control">
                                     <img src="public/images/post/<?php echo $post['picture'] ?>" width="100px"
                                         alt="Image Post">
-                                    <input class="form-file" type="file" name="picture" value="public/images/post/<?php echo $post['picture'] ?>"class="form-control">
 
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="">Image_Details</label>
+                                    <input class="form-file" type="file" name="image_detail"
+                                        value="public/images/post/image_detail/<?php echo $post['image_detail'] ?>"
+                                        class="form-control">
+                                    <img src="public/images/post/image_detail/<?php echo $post['image_detail'] ?>"
+                                        width="100px" alt="Image Post">
+                                </div>
                                 <button type="submit" class="btn btn-warning" name="action" value="update">Save</button>
-
                             </form>
                         </div>
                     </div>

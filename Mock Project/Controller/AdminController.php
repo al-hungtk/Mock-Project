@@ -36,8 +36,8 @@
                     }
                     break;
                 case 'submit':
-                    $email = filter_input(INPUT_POST, 'email');
-                    $password = filter_input(INPUT_POST, 'password');
+                    $email = filter_input(INPUT_POST,'email');
+                    $password = filter_input(INPUT_POST , 'password');
                     $logIn = Admin::checklogin($email, $password);
                     if (!empty($logIn)) {
                         $_SESSION['auth'] = [
@@ -103,14 +103,14 @@
                         $newPassword = filter_input(INPUT_POST, 'new_password');
                         $cfPassword = filter_input(INPUT_POST, 'cf_password');
                         $admin = Admin::getAdminById($id);
+                        Admin::updatePassword($id, $newPassword);
                         // $a = [$id,$currentPassword,$cfPassword];
                         // var_dump($a);
                         // exit();
                         if ($admin['password'] != $currentPassword) {
-                            var_dump(123);
-                            return false;
+                            // var_dump($admin['password'] );
+                            // return false;
                         }
-                        Admin::updatePassword($id, $newPassword);
                         header('Location: .?controller=admincontroller&action=index');
                     }
 		            exit;

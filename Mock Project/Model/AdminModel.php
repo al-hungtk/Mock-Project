@@ -32,7 +32,6 @@
                 exit();
             }
         }
-
      
         public static function addadmin($name, $email, $password, $picture)
         {
@@ -77,7 +76,7 @@
          * @param  mixed $newPassword
          * @return void
          */
-        public static function updatePassword($id, $newPassword){
+        public static function updatePassword($id, $newPassword ){
             $db =Database::getDB();
             try{
                 $query = "UPDATE admin SET(id = :id, password = :newPassword)";
@@ -85,6 +84,9 @@
                 $statement -> bindValue(':id',$id);
                 $newPassword = password_hash($newPassword, PASSWORD_BCRYPT);
                 $statement -> bindValue(':newPassword',$newPassword);
+                // $a =[$id, $newPassword];
+                // var_dump($query);
+                // exit();
                 $statement->execute();
                 $statement->closeCursor();
             }catch(PDOException $e){}
@@ -92,10 +94,7 @@
             echo "ERROR Update Data".$error_message;
             exit();
         }
-
-
      
     }
 
-  
 ?>

@@ -4,7 +4,7 @@
         public static function  featured_news(){
             $db = Database::getDB();
             try{
-                $query = "SELECT * FROM post ORDER BY category_id and created_at DESC  LIMIT 4";
+                $query = "SELECT * FROM post ORDER BY  created_at DESC  LIMIT 4";
                 $statement = $db->prepare($query);
                 $statement->execute();
                 $result = $statement->fetchAll();
@@ -59,13 +59,13 @@
             }
         }
 
-        public static function add($name, $title, $author, $category_id, $maxdate, $information, $summary, $picture){
+        public static function add($image_detail, $title, $author, $category_id, $maxdate, $information, $summary, $picture){
             $db= Database::getDB();
             try{
-                $query = "INSERT INTO post(name, title, author, category_id, maxdate, information, summary, picture)
-                VALUE(:name, :title, :author, :category_id, :maxdate, :information, :summary, :picture)";
+                $query = "INSERT INTO post(image_detail, title, author, category_id, maxdate, information, summary, picture)
+                VALUE(:image_detail, :title, :author, :category_id, :maxdate, :information, :summary, :picture)";
                 $statement = $db->prepare($query);
-                $statement->bindValue(':name', $name);
+                $statement->bindValue(':image_detail', $image_detail);
                 $statement->bindValue(':title', $title);
                 $statement->bindValue(':author', $author);
                 $statement->bindValue(':category_id', $category_id);
@@ -95,16 +95,15 @@
                 echo "Lỗi không tìm thấy id ".$error_message;
             }
         }
-        public static function updatepost($id,$name, $title, $author, $category_id, $maxdate, $information, $summary, $picture){
+        public static function updatepost($id, $image_detail, $title, $author, $category_id, $maxdate, $information, $summary, $picture){
             $db = Database::getDB();
             try {
-                $query = "UPDATE post SET name = :name, title = :title, author = :author,
+                $query = "UPDATE post SET title = :title, author = :author,
                 category_id = :category_id, maxdate = :maxdate, information = :information, summary = :summary, 
-                picture = :picture
+                picture = :picture, image_detail = :image_detail
                 WHERE id = :id";
                 $statement = $db->prepare($query);
                 $statement -> bindValue(':id',$id);
-                $statement -> bindValue(':name',$name);
                 $statement ->bindValue(':title',$title);
                 $statement -> bindValue(':author', $author);
                 $statement->bindValue(':category_id', $category_id);
@@ -112,6 +111,7 @@
                 $statement->bindValue(':information', $information);
                 $statement->bindValue(':summary', $summary);
                 $statement->bindValue(':picture', $picture);
+                $statement ->bindValue(':image_detail',$image_detail);
                 $statement -> execute();
                 $statement -> closeCursor();
             } catch ( PDOException $e ) {

@@ -18,11 +18,6 @@
                         <div class="row">
                             <!--[ daily sales section ] start-->
                             <form action="" method="POST" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input class="form-control" type="text" name="name" placeholder="Enter your name"
-                                        required>
-                                </div>
 
                                 <div class="form-group">
                                     <label for="">Title</label>
@@ -42,7 +37,7 @@
                                     </div>
                                     <select class="custom-select" id="inputGroupSelect01" name="category_id">
                                         <?php foreach ($categories as $key => $value): ?>
-                                        <option value="<?php echo $value['categoryname'] ?>">
+                                        <option value="<?php echo $value['id'] ?>">
                                             <?php echo $value['categoryname'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
@@ -69,6 +64,12 @@
                                 <div class="form-group">
                                     <label for="">Picture</label>
                                     <input class="form-control" type="file" name="picture" placeholder="Enter your name"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Image_Details</label>
+                                    <input class="form-control" type="file" name="image_detail" placeholder="Enter your name"
                                         required>
                                 </div>
 
