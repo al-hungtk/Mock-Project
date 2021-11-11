@@ -76,17 +76,15 @@
          * @param  mixed $newPassword
          * @return void
          */
-        public static function updatePassword($id, $newPassword ){
+        public static function updatePassword($id, $new_password ){
             $db =Database::getDB();
             try{
-                $query = "UPDATE admin SET(id = :id, password = :newPassword)";
+                $query = "UPDATE admin
+                SET  password = :new_password
+                WHERE id = :id";
                 $statement = $db->prepare($query);
-                $statement -> bindValue(':id',$id);
-                $newPassword = password_hash($newPassword, PASSWORD_BCRYPT);
-                $statement -> bindValue(':newPassword',$newPassword);
-                // $a =[$id, $newPassword];
-                // var_dump($query);
-                // exit();
+                $new_password = password_hash($new_password, PASSWORD_BCRYPT);
+                $statement -> bindValue(':new_password',$new_password);
                 $statement->execute();
                 $statement->closeCursor();
             }catch(PDOException $e){}

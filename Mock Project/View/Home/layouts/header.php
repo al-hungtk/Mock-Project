@@ -69,18 +69,21 @@
                 <div class="menu-item">
                     <nav class="nav-menu-left">
                         <ul>
-                            <li><a href="#">HOME</a></li>
+                            <li><a href="?controller=homecontroller&action=">HOME</a></li>
 
                             <?php foreach ($categories as $key => $value):?>
                             <li class="nav-item dropdown">
-                                <a class="menu-content-before" href="#"
+                                <?php if ($value['paren_id'] == 0):?>
+                                    <a class="menu-content-before" href="?controller=homecontroller&action=all-post&id=<?php echo $value['id'];?>"
                                     id="navbarDropdown"><?php echo $value['categoryname'];?></a>
+                                <?php endif;?>
                                 <div class="dropdown-content">
-                                    <a class="dropdown-item" href="#"><?php echo $value['paren_id'];?></a>
+                                    <?php if (isset($children[$value['id']])):
+                                        foreach ($children[$value['id']] as $child):  
+                                    ?>
+                                    <a class="dropdown-item" href="?controller=homecontroller&action=list_post&category_id=<?php echo $child['id'];?>"><?php echo $child['categoryname'];?></a>
                                     <div class="dropdown-divider"></div>
-                                    <!-- <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a> -->
+                                   <?php endforeach; endif;?>
                                 </div>
                             </li>
                             <?php endforeach; ?>

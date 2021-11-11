@@ -7,14 +7,11 @@
                 <span> POPULAR TAGS</span>
             </h5>
             <ul class="text-tag">
-                <?php foreach ($categories as $key => $value):?>
-                <li><a href=""><?php echo $value['categoryname']; ?></a></li>
-                <?php endforeach;?>
-                <!-- <li><a href="">coding</a></li>
-                            <li><a href="">photography</a></li>
-                            <li><a href="">php</a></li>
-                            <li><a href="">wordpress</a></li>
-                            <li><a href="">woo commerce</a></li> -->
+                <?php foreach ($categories as $key => $value):
+                    if($value['paren_id'] ==0 ):
+                ?>
+                <li><a href="?controller=homecontroller&action=list_post&category_id=<?php echo $value['id'];?>"><?php echo $value['categoryname']; ?></a></li>
+                <?php endif; endforeach;?>
             </ul>
         </div>
         <div class="tail-1 text-widget">
@@ -95,10 +92,12 @@
             </p>
         </div>
         <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <?php foreach ($categories as $key => $value):?>
-            <li><a href="#"><?php echo $value['categoryname']; ?></a></li>
-            <?php endforeach;?>
+            <li><a href="?controller=homecontroller&action=">HOME</a></li>
+            <?php foreach ($categories as $key => $value):
+                if($value['paren_id'] ==0 ):
+            ?>
+            <li><a href="?controller=homecontroller&action=list_post&category_id=<?php echo $value['id'];?>"><?php echo $value['categoryname']; ?></a></li>
+            <?php endif; endforeach;?>
 
         </ul>
     </div>

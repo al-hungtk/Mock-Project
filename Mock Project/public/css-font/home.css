@@ -28,6 +28,10 @@ li {
 
 /* Header menu */
 
+a:hover {
+    color: red;
+}
+
 .header {
     width: 1230px;
     position: relative;
@@ -453,6 +457,14 @@ img.d-block {
     font-size: 15px;
     font-family: sans-serif;
     width: 270px;
+    display: -webkit-box;
+    max-height: 5rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-height: 1.6rem;
 }
 
 .colum-1 {
@@ -556,7 +568,7 @@ img.d-block {
 
 .box-center h4 {
     font-size: 14px;
-    width: 225px;
+    width: 255px;
     font-weight: 700;
 }
 
@@ -912,7 +924,7 @@ img.d-block {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f5f5f5;
+    background-color: rgb(255 255 255 / 76%);
     z-index: 20;
     list-style: none;
 }
@@ -946,4 +958,25 @@ dropdown-content a:hover {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 700;
     text-align: center;
+}
+
+.top-text {
+    margin-top: 15px;
+}
+
+.top-text a {
+    margin-top: 15px;
+    color: rgb(72, 187, 187);
+    font-weight: 700;
+}
+
+.title-technology {
+    display: -webkit-box;
+    max-height: 5rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-height: 1.6rem;
 }

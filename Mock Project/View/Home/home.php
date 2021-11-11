@@ -11,7 +11,7 @@
                 <strong>
                     <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>"
                         style="color:red">
-                        <?php echo $news['category_id']?>
+                        <?php echo $news['author']?>
                     </a>
                 </strong>
                 <p> <i class="far fa-clock"></i> <?php echo $news['created_at']?></p>
@@ -25,7 +25,7 @@
             <span class="dash"></span>
             <?php endforeach; ?>
             <li>
-                <a href="?controller=homecontroller&action=list_post" class="btn1">View All Posts</a>
+                <a href="?controller=homecontroller&action=all-post" class="btn1">View All Posts</a>
             </li>
         </ul>
         <div class="aside">
@@ -128,14 +128,15 @@
             <div class="carousel-inner">
                 <?php foreach ($post as $key => $value): ?>
                 <div class="carousel-item <?php echo $key == 1 ? 'active' : ''?> ">
-                    <span><?php echo $value['category_id']?></span>
+                    <span><?php echo $value['author']?></span>
                     <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>">
                         <img src="public/images/post/<?php echo $value['picture'];?>" width="570" height="460"
                             alt="img LATEST NEWS">
                     </a>
                     <div class="carousel-caption d-none d-md-block">
                         <h5>
-                            <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>x" style="color:white">
+                            <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>x"
+                                style="color:white">
                                 <?php echo $value['title']?>
                             </a>
                         </h5>
@@ -151,13 +152,12 @@
         </div>
         <div class="box-show">
             <nav>
-                <?php for($i=1;$i<=1;$i++) { ?>
                 <?php foreach ($featured_news as $value):?>
                 <li class="colum-1">
                     <div class="cell-1">
                         <img src="public/images/post/<?php echo $value['picture'];?>" width="271" height="182"
                             alt="img technology">
-                        <div class="text-img"><?php echo $value['category_id']?></div>
+                        <div class="text-img"><?php echo $value['author']?></div>
                         <h5>
                             <a class="text-mutedd"
                                 href="?controller=homecontroller&action=detail-post&id=<?php echo $value['id']?>"
@@ -167,18 +167,15 @@
                         </h5>
                         <p class="text-icon"> <i class="far fa-clock"></i>
                             <?php echo $value['created_at']?><i class="fas fa-comments"></i> 5</p>
-                        <p class="cell-text">
-                            <span class="max-text" style="display: -webkit-box; max-height: 6.2rem;
+                        <span class="max-text" style="display: -webkit-box; max-height: 5rem;
                         -webkit-box-orient: vertical;overflow: hidden;
                         text-overflow: ellipsis;white-space: normal;
                         -webkit-line-clamp:4;line-height: 1.6rem;">
-                                <?php echo $value['summary']?>
-                            </span>
-                        </p>
+                            <?php echo $value['summary']?>
+                        </span>
                     </div>
                 </li>
                 <?php endforeach; ?>
-                <?php } ?>
 
             </nav>
 
@@ -189,45 +186,37 @@
             </h5>
         </div>
         <div class="box-technology">
+            <?php foreach ($technology as $key => $value):?>
             <div class="colum-3">
                 <div class="cell">
-                    <img src="public/img/technology.png" width="270" height="460" alt="IMG TECHNOLOGY">
+                    <img src="public/images/post/<?php echo $value['picture'];?>" width="270" height="460"
+                        alt="IMG TECHNOLOGY">
                 </div>
             </div>
             <div class="colum-4">
                 <div class="box-center">
-                    <h5>
-                        Improvements to the author earnings page
+                    <h5 class="title-technology">
+                        <?php echo $value['title'];?>
                     </h5>
                     <p> <i class="far fa-clock">
-                        </i> December 13, 2014 <i class="fas fa-comments"></i> 5
+                        </i><?php echo$value['created_at']?> <i class="fas fa-comments"></i> 5
                     </p>
-                    <p class="text-box-p">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                        euismod tincidunt ut laoreet dolore.
-                    </p>
+                    <span class="title-technology text-box-p">
+                        <?php echo $value['summary']?>
+                    </span>
                     <ul>
+                        <?php foreach ($tech as $key => $value):?>
                         <li>
                             <h4>
-                                <i class="icon fas fa-arrow-right"></i> Envato's Most Wanted - Pagewiz
-                                Landing Page Templates - $14,000
+                                <i class="icon fas fa-arrow-right"></i>
+                                <?php echo $value['title']; ?>
                             </h4>
                         </li>
-                        <li>
-                            <h4>
-                                <i class="icon fas fa-arrow-right "></i> Item Support: Feeding back key
-                                dataand insights from the surveys
-                            </h4>
-                        </li>
-                        <li class="button-box">
-                            <h4>
-                                <i class="icon fas fa-arrow-right"></i> In progress - Our knowledge base
-                                will be unavailable for maintenance
-                            </h4>
-                        </li>
+                        <?php  endforeach; ?>
                     </ul>
                 </div>
             </div>
+            <?php  endforeach; ?>
         </div>
     </div>
     <div class="main-right">
@@ -247,7 +236,9 @@
                             </i> <?php echo $value['created_at']; ?> <i class="fas fa-comments"></i> 5
                         </p>
                         <h4>
-                            <?php echo $value['title']; ?>
+                            <a href="?controller=homecontroller&action=detail-post&id=<?php echo $value['id'] ?>">
+                                <?php echo $value['title']; ?>
+                            </a>
                         </h4>
                     </div>
                     <div class="dash-main"></div>
@@ -269,9 +260,12 @@
                 <img src="public/images/post/<?php echo $value['picture']?>" width="370" height="201"
                     alt="MOST COMMENTED 1">
                 <h5>
-                    <?php echo $value['title']?>
+                    <a href="?controller=homecontroller&action=detail-post&id=<?php echo $value['id'] ?>">
+                        <?php echo $value['title']?>
+                    </a>
+
                 </h5>
-                <p> <?php echo $value['category_id']?></p>
+                <p> <?php echo $value['author']?></p>
             </li>
             <?php endforeach;?>
         </ul>

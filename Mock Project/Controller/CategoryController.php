@@ -9,17 +9,14 @@
                     $action = 'list_category';
                 }
             }
-
             switch($action){
                 case 'list_category':
                     if(isset($_SESSION['auth'])){
-                            // var_dump(22);
                         $categories = Category::getcate();
                         include('View/Admin/Categories/index.php');
                         break;
                     }
                     include ('View/Admin/login.php');
-                    break;
                 break;
                 case 'add':
                     $categories = Category::getcate();

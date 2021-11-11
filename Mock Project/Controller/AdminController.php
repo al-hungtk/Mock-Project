@@ -100,16 +100,17 @@
                     if(!empty($id)){
                         $id = filter_input(INPUT_POST, 'id');
                         $currentPassword = filter_input(INPUT_POST, 'current_password');
-                        $newPassword = filter_input(INPUT_POST, 'new_password');
+                        $new_password = filter_input(INPUT_POST, 'new_password');
                         $cfPassword = filter_input(INPUT_POST, 'cf_password');
                         $admin = Admin::getAdminById($id);
-                        Admin::updatePassword($id, $newPassword);
-                        // $a = [$id,$currentPassword,$cfPassword];
+                        // $a = [$currentPassword,$newPassword, $cfPassword];
                         // var_dump($a);
                         // exit();
+                        Admin::updatePassword($id, $new_password);
                         if ($admin['password'] != $currentPassword) {
-                            // var_dump($admin['password'] );
-                            // return false;
+                            return false;
+                            return 'sai';
+                            exit();
                         }
                         header('Location: .?controller=admincontroller&action=index');
                     }

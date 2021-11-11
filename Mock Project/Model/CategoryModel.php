@@ -37,7 +37,7 @@
         public static function editCategories($id){
             $db = Database::getDB();
             try{
-                    $query = "SELECT *  /*categoryname, moreinfo*/
+                    $query = "SELECT *  
                     FROM categories
                     WHERE id = :id ";
                     $statement = $db->prepare($query);
@@ -51,6 +51,24 @@
                     exit();
                 }
         }
+
+        public static function getChildren($paren_id){
+            $db = Database::getDB();
+            try{
+                    $query = "SELECT *  
+                    FROM categories
+                    WHERE paren_id = " . $paren_id;
+                    $statement = $db->prepare($query);
+                    $statement->execute();
+                    $result = $statement->fetchAll();
+                    return $result;
+                } catch (PDOException $e) {
+                    $error_message = $e->getMessage();
+                    echo "Data error: $error_message" ;
+                    exit();
+                }
+        }
+
         public static function updatecategory($id,$categoryname,$paren_id){
             $db = Database::getDB();
             try{
