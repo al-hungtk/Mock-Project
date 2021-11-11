@@ -2,7 +2,7 @@
 	class Database{
 		private static $dsn = 'mysql:host=localhost;dbname=mvc';
 		private static $username = 'root';
-		private static $pass='';
+		private static $pass='wgfT<*#y';
 		private static $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 		private static $db;
 		private function __construct(){			

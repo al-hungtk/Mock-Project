@@ -12,8 +12,6 @@
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
                 echo "Database error: $error_message";
-                // include ('View/error/error_404.php');
-
                 exit();
             }
         }
@@ -34,7 +32,6 @@
                 exit();
             }
         }
-
      
         public static function addadmin($name, $email, $password, $picture)
         {
@@ -46,7 +43,6 @@
                 $password = password_hash($password, PASSWORD_BCRYPT);
                 $statement->bindValue(':name', $name);
                 $statement->bindValue(':email', $email);
-                // $statement->bindValue(':password', $password);
                 $statement->bindValue("password", $password);
                 $statement->bindValue(':picture', $picture);
                 $statement->execute();
@@ -58,70 +54,45 @@
             }
         }
 
-        public static function editadmin($id){
+        public static function getAdminById($id){
             $db= Database::getDB();
             try{
-                if($_SESSION['auth']->id){
-                    $query= "SELECT * FROM admin WHERE id = :id'";
-                    $statement = $db->prepare($query);
-                    $statement->bindValue(':id',$id);
-                    $statement->execute();
-                    $result = $statement->fetch();
-                    return $result;
-                }
+                $query= "SELECT * FROM admin WHERE id = :id";
+                $statement = $db->prepare($query);
+                $statement->bindValue(':id',$id);
+                $statement->execute();
+                $result = $statement->fetch();
+                return $result;
             }catch( PDOException $e ){
                 $error_message = $e->getMessage();
                 echo "Error". $error_message;
                 exit();
             }
         }
-
-        public static function update($id, $name, $email, $password, $picture){
+        /**
+         * updatePassword
+         *
+         * @param  mixed $id
+         * @param  mixed $newPassword
+         * @return void
+         */
+        public static function updatePassword($id, $new_password ){
             $db =Database::getDB();
             try{
-                $query = "UPDATE admin SET(id = :id, name = :name, email = :email, password = :password, picture = :picture)";
+                $query = "UPDATE admin
+                SET  password = :new_password
+                WHERE id = :id";
                 $statement = $db->prepare($query);
-                $statement -> bindValue(':id',$id);
-                $statement -> bindValue(':name',$name);
-                $statement -> bindValue(':email',$email);
-                $statement -> bindValue(':password',$password);
-                $statement -> bindValue(':picture',$picture);
+                $new_password = password_hash($new_password, PASSWORD_BCRYPT);
+                $statement -> bindValue(':new_password',$new_password);
                 $statement->execute();
                 $statement->closeCursor();
             }catch(PDOException $e){}
             $error_message = $e->getMessage();
-            echo "ERROR update data".$error_message;
+            echo "ERROR Update Data".$error_message;
             exit();
         }
-
-        public static function paginate($page){
-            $conn = mysqli_connect('localhost', 'root', '', 'mvc');
-            $result = mysqli_query($conn, 'select count(id) as total from news');
-            $row = mysqli_fetch_assoc($result);
-            $total_records = $row['total'];
-
-            $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-            $limit = 10;
-            $total_page = ceil($total_records / $limit);
-            if ($current_page > $total_page){
-                $current_page = $total_page;
-            }
-            else if ($current_page < 1){
-                $current_page = 1;
-            }
-             
-            // Tìm Start
-            $start = ($current_page - 1) * $limit;
-             
-            // BƯỚC 5: TRUY VẤN LẤY DANH SÁCH TIN TỨC
-            // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
-            $result = mysqli_query($conn, "SELECT * FROM admin LIMIT $start, $limit");
-
-            while ($row = mysqli_fetch_assoc($result)){
-                echo '<li>' . $row['title'] . '</li>';
-            }
-        }
+     
     }
 
-  
 ?>

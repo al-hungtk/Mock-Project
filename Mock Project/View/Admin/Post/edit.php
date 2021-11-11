@@ -24,12 +24,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input class="form-control" type="text" name="name"
-                                        value="<?php echo $post['name'] ?>">
-                                </div>
-
-                                <div class="form-group">
                                     <label for="">title</label>
                                     <input class="form-control" type="text" name="title"
                                         value="<?php echo $post['title'] ?>">
@@ -50,7 +44,7 @@
                                         </div>
                                         <select class="custom-select" id="inputGroupSelect01" name="category_id">
                                             <?php foreach ($categories as $key => $value): ?>
-                                            <option value="<?php echo $value['categoryname'] ?>">
+                                            <option value="<?php echo $value['id'] ?>">
                                                 <?php echo $value['categoryname'] ?></option>
                                             <?php endforeach; ?>
                                         </select>
@@ -65,27 +59,36 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">Information</label>
-                                    <input class="form-control" type="text" name="information" id="information"
-                                        value="<?php echo $post['information']?>" readonly>
+                                    <label for="">Informations</label>
+                                    <textarea class="form-control mytextarea" type="text" name="information" id="" cols="140"
+                                        rows="10" placeholder="Enter your information" ><?php echo  $post['information'];?></textarea>
                                 </div>
-
+                             
                                 <div class="form-group">
                                     <label for="">Summary</label>
-                                    <input class="form-control" type="text" name="summary" id="summary"
-                                        value="<?php echo $post['summary']?>" readonly>
+                                    <textarea class="form-control mytextarea" type="text" name="summary" id="" cols="140"
+                                        rows="10" placeholder="Enter your summary" ><?php echo  $post['summary'];?></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Picture</label>
+
+                                    <input class="form-file" type="file" name="picture"
+                                        value="public/images/post/<?php echo $post['picture'] ?>" class="form-control">
                                     <img src="public/images/post/<?php echo $post['picture'] ?>" width="100px"
                                         alt="Image Post">
-                                    <input class="form-file" type="file" name="picture" value="public/images/post/<?php echo $post['picture'] ?>"class="form-control">
 
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="">Image_Details</label>
+                                    <input class="form-file" type="file" name="image_detail"
+                                        value="public/images/post/image_detail/<?php echo $post['image_detail'] ?>"
+                                        class="form-control">
+                                    <img src="public/images/post/image_detail/<?php echo $post['image_detail'] ?>"
+                                        width="100px" alt="Image Post">
+                                </div>
                                 <button type="submit" class="btn btn-warning" name="action" value="update">Save</button>
-
                             </form>
                         </div>
                     </div>
@@ -94,3 +97,10 @@
         </div>
     </div>
 </div>
+<script>
+tinymce.init({
+    selector: '.mytextarea'
+
+});
+
+</script>

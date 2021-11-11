@@ -1,5 +1,6 @@
 <?php 
     class Category {
+       
         public static function getcate() {
             $db = Database::getDB();
             try{
@@ -15,15 +16,15 @@
             }
         }
 
-        public static function add($categoryname, $moreinfo){
+        public static function add($categoryname, $paren_id = 0){
             $db = Database::getDB();
             try{
-                $query = "INSERT INTO categories(categoryname,moreinfo)
+                $query = "INSERT INTO categories(categoryname,paren_id)
     
-                        VALUES (:category_Name, :more_Info)";
+                        VALUES (:category_Name, :paren_id)";
                 $statement = $db ->prepare($query);
                 $statement -> bindValue(':category_Name',$categoryname);
-                $statement -> bindValue(':more_Info',$moreinfo);
+                $statement -> bindValue(':paren_id',$paren_id);
                 $statement -> execute();
                 $statement -> closeCursor();
             } catch (PDOException $e) {
@@ -36,7 +37,7 @@
         public static function editCategories($id){
             $db = Database::getDB();
             try{
-                    $query = "SELECT *  /*categoryname, moreinfo*/
+                    $query = "SELECT *  
                     FROM categories
                     WHERE id = :id ";
                     $statement = $db->prepare($query);
@@ -50,16 +51,34 @@
                     exit();
                 }
         }
-        public static function updatecategory($id,$categoryname,$moreinfo){
+
+        public static function getChildren($paren_id){
+            $db = Database::getDB();
+            try{
+                    $query = "SELECT *  
+                    FROM categories
+                    WHERE paren_id = " . $paren_id;
+                    $statement = $db->prepare($query);
+                    $statement->execute();
+                    $result = $statement->fetchAll();
+                    return $result;
+                } catch (PDOException $e) {
+                    $error_message = $e->getMessage();
+                    echo "Data error: $error_message" ;
+                    exit();
+                }
+        }
+
+        public static function updatecategory($id,$categoryname,$paren_id){
             $db = Database::getDB();
             try{
                 $query = "UPDATE categories
-                    SET categoryname = :categoryname , moreinfo = :moreinfo
+                    SET categoryname = :categoryname , paren_id = :paren_id
                     WHERE id = :id";
                 $statement = $db ->prepare($query);
                 $statement -> bindValue(':id', $id);
                 $statement -> bindValue(':categoryname',$categoryname);
-                $statement -> bindValue(':moreinfo',$moreinfo);
+                $statement -> bindValue(':paren_id',$paren_id);
                 $statement -> execute();
                 $statement -> closeCursor();
             } catch (PDOException $e) {

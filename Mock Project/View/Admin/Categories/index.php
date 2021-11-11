@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>STT</th>
                                         <th>categoryname</th>
-                                        <th>moreinfo</th>
+                                        <th>Parean_id</th>
                                         <th>edit</th>
                                         <th>delete</th>
                                     </tr>
@@ -37,7 +37,7 @@
                                     <tr>
                                         <td><?php echo $value['id'];?></td>
                                         <td><?php echo $value['categoryname'];?></td>
-                                        <td><?php echo $value['moreinfo'];?></td>
+                                        <td><?php echo $value['paren_id'];?></td>
                                         <td><a href="?controller=categorycontroller&action=edit&id=<?php echo $value['id'] ?>"
                                                 class="btn btn-primary">Edit</a></td>
                                         <td><a  data-confirm="Are you sure to delete this item?"  href="?controller=categorycontroller&action=delete&id=<?php echo $value['id']?>"
