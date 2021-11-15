@@ -45,11 +45,11 @@
                                 <i class="fab fa-pinterest-p"></i>
                             </li>
                             <li class="symbol">
-                            <?php if($_SESSION['auth']){?>
-                                <span><a href="?controller=admincontroller&action=logout">LOGOUT</a></span>
-                            <?php }else{?>
-                                <span><a href="?controller=admincontroller&action=login">LOGIN</a></span>
-                            <?php }?>
+                                <?php if($_SESSION['auth']){?>
+                                <span><a href="?controller=admin&action=logout">LOGOUT</a></span>
+                                <?php }else{?>
+                                <span><a href="?controller=admin&action=login">LOGIN</a></span>
+                                <?php }?>
                             </li>
                         </ul>
                     </div>
@@ -69,21 +69,23 @@
                 <div class="menu-item">
                     <nav class="nav-menu-left">
                         <ul>
-                            <li><a href="?controller=homecontroller&action=">HOME</a></li>
+                            <li><a href="?controller=home&action=">HOME</a></li>
 
                             <?php foreach ($categories as $key => $value):?>
                             <li class="nav-item dropdown">
                                 <?php if ($value['paren_id'] == 0):?>
-                                    <a class="menu-content-before" href="?controller=homecontroller&action=all-post&id=<?php echo $value['id'];?>"
+                                <a class="menu-content-before"
+                                    href="?controller=home&action=list_post&category_id=<?php echo $value['id'];?>"
                                     id="navbarDropdown"><?php echo $value['categoryname'];?></a>
                                 <?php endif;?>
                                 <div class="dropdown-content">
                                     <?php if (isset($children[$value['id']])):
                                         foreach ($children[$value['id']] as $child):  
                                     ?>
-                                    <a class="dropdown-item" href="?controller=homecontroller&action=list_post&category_id=<?php echo $child['id'];?>"><?php echo $child['categoryname'];?></a>
+                                    <a class="dropdown-item"
+                                        href="?controller=home&action=list_post&category_id=<?php echo $child['id'];?>"><?php echo $child['categoryname'];?></a>
                                     <div class="dropdown-divider"></div>
-                                   <?php endforeach; endif;?>
+                                    <?php endforeach; endif;?>
                                 </div>
                             </li>
                             <?php endforeach; ?>
@@ -93,5 +95,5 @@
                         <i class="fas fa-search"></i>
                     </div>
                 </div>
-            <div class="pan-lent" style="border:1px solid black; height:1px;margin-top:1px;"></div>
+                <div class="pan-lent" style="border:1px solid black; height:1px;margin-top:1px;"></div>
             </div>

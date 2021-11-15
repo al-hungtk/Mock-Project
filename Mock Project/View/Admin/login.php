@@ -32,7 +32,7 @@
                             <p class="mb-2 text-muted ">Forgot password? <a href="auth-reset-password.html ">Reset</a>
                             </p>
                             <p class="mb-0 text-muted ">Don’t have an account? <a
-                                    href="?controller=admincontroller&action=register">Signup</a>
+                                    href="?controller=admin&action=register">Signup</a>
                             </p>
                         </div>
                     </form>

@@ -8,7 +8,7 @@
                     <img src="public/images/post/<?php echo $value['picture'];?>" width="270" height="170"
                         alt="<?php echo $value['title']?>">
                     <h3 class="text-mutedd top-text">
-                        <a href="?controller=homecontroller&action=detail-post&id=<?php echo $value['id']?>"><?php echo $value['title']?>
+                        <a href="?controller=home&action=detail-post&id=<?php echo $value['id']?>"><?php echo $value['title']?>
                         </a>
                     </h3>
                 </div>
