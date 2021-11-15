@@ -11,6 +11,9 @@ include('Model/HomeModel.php');
             }
             switch($action){
                 case 'home':
+                    if($_SESSION['auth']['id']){
+                        
+                    }
                     $children = [];
                     $categories = Category::getcate();
                     foreach($categories as $category) {

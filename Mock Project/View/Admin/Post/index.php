@@ -41,7 +41,7 @@
                                         <td><?php echo $key+1?></td>
                                         <td><?php echo $value['title'];?></td>
                                         <td><?php echo $value['author'];?></td>
-                                        <td><a href="?controller=categorycontroller&action=list_category&id=<?php echo $value['id'] ?>"
+                                        <td><a href="?controller=category&action=list_category&id=<?php echo $value['id'] ?>"
                                                 class="btn btn-warning "><?php echo $value['category_id'];?></a></td>
                                         <td><?php echo $value['maxdate'];?></td>
                                         <!-- <td><textarea name="" id="" cols="70" rows="10"
@@ -57,10 +57,10 @@
                                         <td><?php echo $value['created_at'];?></td>
                                         <td>
 
-                                            <a href="?controller=postcontroller&action=edit&id=<?php echo $value['id'] ?>"
+                                            <a href="?controller=post&action=edit&id=<?php echo $value['id'] ?>"
                                                 class="btn btn-warning">Edit</a>
 
-                                            <a href="?controller=postcontroller&action=delete&id=<?php echo $value['id'] ?>"
+                                            <a href="?controller=post&action=delete&id=<?php echo $value['id'] ?>"
                                                 class="btn btn-warning">DEL</a>
                                         </td>
                                     </tr>

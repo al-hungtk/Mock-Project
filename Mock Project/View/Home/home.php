@@ -9,15 +9,13 @@
             <?php foreach ($post as $news):?>
             <li>
                 <strong>
-                    <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>"
-                        style="color:red">
+                    <a href="?controller=home&action=detail-post&id=<?php echo $news['id'] ?>" style="color:red">
                         <?php echo $news['author']?>
                     </a>
                 </strong>
                 <p> <i class="far fa-clock"></i> <?php echo $news['created_at']?></p>
                 <h4>
-                    <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>"
-                        style="color:black">
+                    <a href="?controller=home&action=detail-post&id=<?php echo $news['id'] ?>" style="color:black">
                         <?php echo $news['title']?>
                     </a>
                 </h4>
@@ -25,7 +23,7 @@
             <span class="dash"></span>
             <?php endforeach; ?>
             <li>
-                <a href="?controller=homecontroller&action=all-post" class="btn1">View All Posts</a>
+                <a style="color:#fff;" href="?controller=home&action=all-post" class="btn1">View All Posts</a>
             </li>
         </ul>
         <div class="aside">
@@ -129,13 +127,13 @@
                 <?php foreach ($post as $key => $value): ?>
                 <div class="carousel-item <?php echo $key == 1 ? 'active' : ''?> ">
                     <span><?php echo $value['author']?></span>
-                    <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>">
+                    <a href="?controller=home&action=detail-post&id=<?php echo $value['id'] ?>">
                         <img src="public/images/post/<?php echo $value['picture'];?>" width="570" height="460"
                             alt="img LATEST NEWS">
                     </a>
                     <div class="carousel-caption d-none d-md-block">
                         <h5>
-                            <a href="?controller=homecontroller&action=detail-post&id=<?php echo $news['id'] ?>x"
+                            <a href="?controller=home&action=detail-post&id=<?php echo $value['id'] ?>"
                                 style="color:white">
                                 <?php echo $value['title']?>
                             </a>
@@ -160,7 +158,7 @@
                         <div class="text-img"><?php echo $value['author']?></div>
                         <h5>
                             <a class="text-mutedd"
-                                href="?controller=homecontroller&action=detail-post&id=<?php echo $value['id']?>"
+                                href="?controller=home&action=detail-post&id=<?php echo $value['id']?>"
                                 style="font-family: sans-serif;">
                                 <?php echo $value['title']?>
                             </a>
@@ -196,7 +194,8 @@
             <div class="colum-4">
                 <div class="box-center">
                     <h5 class="title-technology">
-                        <?php echo $value['title'];?>
+                        <a style=""
+                            href="?controller=home&action=detail-post&id=<?php echo $value['id'] ?>"><?php echo $value['title'];?></a>
                     </h5>
                     <p> <i class="far fa-clock">
                         </i><?php echo$value['created_at']?> <i class="fas fa-comments"></i> 5
@@ -207,9 +206,10 @@
                     <ul>
                         <?php foreach ($tech as $key => $value):?>
                         <li>
-                            <h4>
+                            <h4 >
                                 <i class="icon fas fa-arrow-right"></i>
-                                <?php echo $value['title']; ?>
+                                <a  href="?controller=home&action=detail-post&id=<?php echo $value['id'] ?>"><?php echo $value['title']; ?>
+                                </a>
                             </h4>
                         </li>
                         <?php  endforeach; ?>
@@ -236,7 +236,7 @@
                             </i> <?php echo $value['created_at']; ?> <i class="fas fa-comments"></i> 5
                         </p>
                         <h4>
-                            <a href="?controller=homecontroller&action=detail-post&id=<?php echo $value['id'] ?>">
+                            <a href="?controller=home&action=detail-post&id=<?php echo $value['id'] ?>">
                                 <?php echo $value['title']; ?>
                             </a>
                         </h4>
@@ -260,7 +260,7 @@
                 <img src="public/images/post/<?php echo $value['picture']?>" width="370" height="201"
                     alt="MOST COMMENTED 1">
                 <h5>
-                    <a href="?controller=homecontroller&action=detail-post&id=<?php echo $value['id'] ?>">
+                    <a href="?controller=home&action=detail-post&id=<?php echo $value['id'] ?>">
                         <?php echo $value['title']?>
                     </a>
 

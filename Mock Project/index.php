@@ -4,21 +4,20 @@ include('./Route/route.php');
     
 $controller = filter_input(INPUT_GET, 'controller');
 if (empty($controller)) {
-    $controller = 'homecontroller';
+    $controller = 'home';
 }
 
-
 switch ($controller) {
-    case 'admincontroller':
+    case 'admin':
         include('Controller/AdminController.php');
         break;
-    case 'homecontroller':
+    case 'home':
         include('Controller/HomeController.php');
         break;
-    case 'postcontroller':
+    case 'post':
         include('Controller/PostController.php');
         break;
-    case 'categorycontroller':
+    case 'category':
         include('Controller/CategoryController.php');
         break;
     default:

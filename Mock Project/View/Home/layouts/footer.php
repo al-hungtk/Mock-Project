@@ -10,7 +10,7 @@
                 <?php foreach ($categories as $key => $value):
                     if($value['paren_id'] ==0 ):
                 ?>
-                <li><a href="?controller=homecontroller&action=list_post&category_id=<?php echo $value['id'];?>"><?php echo $value['categoryname']; ?></a></li>
+                <li><a href="?controller=home&action=list_post&category_id=<?php echo $value['id'];?>"><?php echo $value['categoryname']; ?></a></li>
                 <?php endif; endforeach;?>
             </ul>
         </div>
@@ -92,11 +92,11 @@
             </p>
         </div>
         <ul class="footer-links">
-            <li><a href="?controller=homecontroller&action=">HOME</a></li>
+            <li><a href="?controller=home&action=">HOME</a></li>
             <?php foreach ($categories as $key => $value):
                 if($value['paren_id'] ==0 ):
             ?>
-            <li><a href="?controller=homecontroller&action=list_post&category_id=<?php echo $value['id'];?>"><?php echo $value['categoryname']; ?></a></li>
+            <li><a href="?controller=home&action=list_post&category_id=<?php echo $value['id'];?>"><?php echo $value['categoryname']; ?></a></li>
             <?php endif; endforeach;?>
 
         </ul>

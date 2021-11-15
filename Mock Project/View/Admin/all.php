@@ -41,9 +41,9 @@
                                                                 MAY 12:56</h6>
                                                         </td>
                                                         <td>
-                                                            <a href="?controller=admincontroller&action=edit&id=<?php echo $value['id'] ?>"
+                                                            <a href="?controller=admin&action=edit&id=<?php echo $value['id'] ?>"
                                                                 class="label theme-bg2 text-white f-12">EDIT</a>
-                                                            <a href="?controller=admincontroller&action=delete&id=<?php echo $value['id'] ?>"
+                                                            <a href="?controller=admin&action=delete&id=<?php echo $value['id'] ?>"
                                                                 class="label theme-bg text-white f-12">DELETE</a>
                                                         </td>
                                                     </tr>

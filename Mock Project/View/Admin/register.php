@@ -5,14 +5,14 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        $query = $connection->prepare("SELECT * FROM tbl_user WHERE email=:email");
+        $query = $connection->prepare("SELECT * FROM admin WHERE email=:email");
         $query->bindParam("email", $email, PDO::PARAM_STR);
         $query->execute();
         if ($query->rowCount() > 0) {
             echo '<p class="error">Email has already been taken!</p>';
         }
         if ($query->rowCount() == 0) {
-            $query = $connection->prepare("INSERT INTO tbl_user(username,password,email) VALUES (:username,:password_hash,:email)");
+            $query = $connection->prepare("INSERT INTO admin(name,password,email) VALUES (:name,:password_hash,:email)");
             $query->bindParam("username", $username, PDO::PARAM_STR);
             $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
             $query->bindParam("email", $email, PDO::PARAM_STR);
@@ -69,7 +69,7 @@
                         <button type="submit" name="action" value="add" class="btn btn-primary shadow-2 mb-4">Sign
                             up</button>
                         <p class="mb-0 text-muted">Allready have an account? <a
-                                href="?controller=admincontroller&action=login"> Log in</a></p>
+                                href="?controller=admin&action=login"> Log in</a></p>
                     </div>
                 </form>
             </div>
